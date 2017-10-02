@@ -138,7 +138,6 @@ d3.csv("data/1987-2017.csv", function(error, data) {
     vis.selectAll("dot")
         .data(data)
         .enter().append("circle")
-    //.attr("r", 7.0)
         .attr("r", function(d) { return 25 * Math.sqrt(Math.abs(d.na_value) / Math.PI); }) // radius of circle
         .attr("cx", function(d) { return x(d.year); }) // x position
         .attr("cy", function(d) { return y(d.na_value); }) // y position
@@ -149,51 +148,25 @@ d3.csv("data/1987-2017.csv", function(error, data) {
         .on("mouseleave", mouseLeave);
 });
 
-document.getElementById("na").onclick = na;
-
 function na(){ // North America
     // Get data again
     d3.csv("data/1987-2017.csv", function(error, data) {
         data.forEach(function(d) {
             d.year = +d.year;
             d.na_value = +d.na_value;
+
+            console.log(d.year);
         });
 
         // Scale range of the data
         x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
         y.domain([d3.min(data, function(d) { return d.na_value*-1; }), d3.max(data, function (d) {return d.na_value; })]);
 
-        // Add the tooltip container to container-fluid
-        // it's invisible and its position/contents are defined during mouseover
         var tooltip = d3.select("#scatterPlot")
             .append("div")
             .attr("class", "tooltip")
-            .style("opacity", 0);
+            .style("opacity", 10);
 
-        // tooltip mouseover event handler
-        var mouseOver = function(d) {
-            var yearString = "Year: ";
-            var valueString = "Anomaly: ";
-            var year = yearString.fontcolor("#107896");
-            var value = valueString.fontcolor("#C02F1D");
-            var result = year + d.year + "<br/>" + value + d.na_value + "<br/>";
-
-            tooltip.html(result)
-                .style("left", (d3.event.pageX + 10) + "px")
-                .style("top", (d3.event.pageY - 28) + "px")
-                .style("padding", "5px")
-                .transition()
-                .duration(200) // ms
-                .style("opacity", .9) // started as 0!
-        };
-
-        var mouseLeave = function(d) {
-            tooltip.transition()
-                .duration(300) // ms
-                .style("opacity", 0); // don't care about position!
-        };
-
-        // Select svg to apply changes to
         vis = d3.select("#scatterPlot").transition();
         vis.select(".x.axis")
             .duration(750)
@@ -209,38 +182,14 @@ function na(){ // North America
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
-            .on("mouseover", mouseOver())
-            .on("mouseleave", mouseLeave);
-    });
-}
 
-function as(){ // Asia
-    // Get data again
-    d3.csv("data/1987-2017.csv", function(error, data) {
-        data.forEach(function(d) {
-            d.year = +d.year;
-            d.na_value = +d.na_value;
-            d.as_value = +d.as_value;
-        });
-
-        // Scale range of the data
-        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
-        y.domain([d3.min(data, function(d) { return d.as_value*-1; }), d3.max(data, function (d) {return d.as_value; })]);
-
-        // Add the tooltip container to container-fluid
-        // it's invisible and its position/contents are defined during mouseover
-        var tooltip = d3.select("#scatterPlot")
-            .append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
-
-        // tooltip mouseover event handler
-        var mouseOver = function(d) {
+        var vis2 = d3.select("#scatterPlot").selectAll("circle");
+        vis2.on("mouseover",function(d){
             var yearString = "Year: ";
             var valueString = "Anomaly: ";
             var year = yearString.fontcolor("#107896");
             var value = valueString.fontcolor("#C02F1D");
-            var result = year + d.year + "<br/>" + value + d.as_value + "<br/>";
+            var result = year + d.year + "<br/>" + value + d.na_value + "<br/>";
 
             tooltip.html(result)
                 .style("left", (d3.event.pageX + 10) + "px")
@@ -249,15 +198,34 @@ function as(){ // Asia
                 .transition()
                 .duration(200) // ms
                 .style("opacity", .9) // started as 0!
-        };
+        })
+            .on("mouseleave",function(d){
+                tooltip.transition()
+                    .duration(300) // ms
+                    .style("opacity", 0); // don't care about position!
+            });
+    });
+}
 
-        var mouseLeave = function(d) {
-            tooltip.transition()
-                .duration(300) // ms
-                .style("opacity", 0); // don't care about position!
-        };
+function as(){ // Asia
+    // Get data again
+    d3.csv("data/1987-2017.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.year = +d.year;
+            d.as_value = +d.as_value;
 
-        // Select svg to apply changes to
+            console.log(d.year);
+        });
+
+        // Scale range of the data
+        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
+        y.domain([d3.min(data, function(d) { return d.as_value*-1; }), d3.max(data, function (d) {return d.as_value; })]);
+
+        var tooltip = d3.select("#scatterPlot")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 10);
+
         vis = d3.select("#scatterPlot").transition();
         vis.select(".x.axis")
             .duration(750)
@@ -273,39 +241,14 @@ function as(){ // Asia
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
-            .on("mouseover", mouseOver())
-            .on("mouseleave", mouseLeave);
-    });
-}
 
-function eu(){ // Europe
-    // Get data again
-    d3.csv("data/1987-2017.csv", function(error, data) {
-        data.forEach(function(d) {
-            d.year = +d.year;
-            d.na_value = +d.na_value;
-            d.as_value = +d.as_value;
-            d.eu_value = +d.eu_value;
-        });
-
-        // Scale range of the data
-        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
-        y.domain([d3.min(data, function(d) { return d.eu_value*-1; }), d3.max(data, function (d) {return d.eu_value; })]);
-
-        // Add the tooltip container to container-fluid
-        // it's invisible and its position/contents are defined during mouseover
-        var tooltip = d3.select("#scatterPlot")
-            .append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
-
-        // tooltip mouseover event handler
-        var mouseOver = function(d) {
+        var vis2 = d3.select("#scatterPlot").selectAll("circle");
+        vis2.on("mouseover",function(d){
             var yearString = "Year: ";
             var valueString = "Anomaly: ";
             var year = yearString.fontcolor("#107896");
             var value = valueString.fontcolor("#C02F1D");
-            var result = year + d.year + "<br/>" + value + d.eu_value + "<br/>";
+            var result = year + d.year + "<br/>" + value + d.as_value + "<br/>";
 
             tooltip.html(result)
                 .style("left", (d3.event.pageX + 10) + "px")
@@ -314,15 +257,34 @@ function eu(){ // Europe
                 .transition()
                 .duration(200) // ms
                 .style("opacity", .9) // started as 0!
-        };
+        })
+            .on("mouseleave",function(d){
+                tooltip.transition()
+                    .duration(300) // ms
+                    .style("opacity", 0); // don't care about position!
+            });
+    });
+}
 
-        var mouseLeave = function(d) {
-            tooltip.transition()
-                .duration(300) // ms
-                .style("opacity", 0); // don't care about position!
-        };
+function eu(){ // Europe
+    // Get data again
+    d3.csv("data/1987-2017.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.year = +d.year;
+            d.eu_value = +d.eu_value;
 
-        // Select svg to apply changes to
+            console.log(d.year);
+        });
+
+        // Scale range of the data
+        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
+        y.domain([d3.min(data, function(d) { return d.eu_value*-1; }), d3.max(data, function (d) {return d.eu_value; })]);
+
+        var tooltip = d3.select("#scatterPlot")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 10);
+
         vis = d3.select("#scatterPlot").transition();
         vis.select(".x.axis")
             .duration(750)
@@ -338,40 +300,14 @@ function eu(){ // Europe
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
-            .on("mouseover", mouseOver())
-            .on("mouseleave", mouseLeave);
-    });
-}
 
-function oc(){ // Europe
-    // Get data again
-    d3.csv("data/1987-2017.csv", function(error, data) {
-        data.forEach(function(d) {
-            d.year = +d.year;
-            d.na_value = +d.na_value;
-            d.as_value = +d.as_value;
-            d.eu_value = +d.eu_value;
-            d.ou_value = +d.ou_value;
-        });
-
-        // Scale range of the data
-        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
-        y.domain([d3.min(data, function(d) { return d.ou_value*-1; }), d3.max(data, function (d) {return d.ou_value; })]);
-
-        // Add the tooltip container to container-fluid
-        // it's invisible and its position/contents are defined during mouseover
-        var tooltip = d3.select("#scatterPlot")
-            .append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
-
-        // tooltip mouseover event handler
-        var mouseOver = function(d) {
+        var vis2 = d3.select("#scatterPlot").selectAll("circle");
+        vis2.on("mouseover",function(d){
             var yearString = "Year: ";
             var valueString = "Anomaly: ";
             var year = yearString.fontcolor("#107896");
             var value = valueString.fontcolor("#C02F1D");
-            var result = year + d.year + "<br/>" + value + d.ou_value + "<br/>";
+            var result = year + d.year + "<br/>" + value + d.eu_value + "<br/>";
 
             tooltip.html(result)
                 .style("left", (d3.event.pageX + 10) + "px")
@@ -380,15 +316,34 @@ function oc(){ // Europe
                 .transition()
                 .duration(200) // ms
                 .style("opacity", .9) // started as 0!
-        };
+        })
+            .on("mouseleave",function(d){
+                tooltip.transition()
+                    .duration(300) // ms
+                    .style("opacity", 0); // don't care about position!
+            });
+    });
+}
 
-        var mouseLeave = function(d) {
-            tooltip.transition()
-                .duration(300) // ms
-                .style("opacity", 0); // don't care about position!
-        };
+function oc(){ // Europe
+    // Get data again
+    d3.csv("data/1987-2017.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.year = +d.year;
+            d.ou_value = +d.ou_value;
 
-        // Select svg to apply changes to
+            console.log(d.year);
+        });
+
+        // Scale range of the data
+        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
+        y.domain([d3.min(data, function(d) { return d.ou_value*-1; }), d3.max(data, function (d) {return d.ou_value; })]);
+
+        var tooltip = d3.select("#scatterPlot")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 10);
+
         vis = d3.select("#scatterPlot").transition();
         vis.select(".x.axis")
             .duration(750)
@@ -404,41 +359,14 @@ function oc(){ // Europe
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
-            .on("mouseover", mouseOver())
-            .on("mouseleave", mouseLeave);
-    });
-}
 
-function af(){
-    // Get data again
-    d3.csv("data/1987-2017.csv", function(error, data) {
-        data.forEach(function(d) {
-            d.year = +d.year;
-            d.na_value = +d.na_value;
-            d.as_value = +d.as_value;
-            d.eu_value = +d.eu_value;
-            d.ou_value = +d.ou_value;
-            d.af_value = +d.af_value;
-        });
-
-        // Scale range of the data
-        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
-        y.domain([d3.min(data, function(d) { return d.af_value*-1; }), d3.max(data, function (d) {return d.af_value; })]);
-
-        // Add the tooltip container to container-fluid
-        // it's invisible and its position/contents are defined during mouseover
-        var tooltip = d3.select("#scatterPlot")
-            .append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
-
-        // tooltip mouseover event handler
-        var mouseOver = function(d) {
+        var vis2 = d3.select("#scatterPlot").selectAll("circle");
+        vis2.on("mouseover",function(d){
             var yearString = "Year: ";
             var valueString = "Anomaly: ";
             var year = yearString.fontcolor("#107896");
             var value = valueString.fontcolor("#C02F1D");
-            var result = year + d.year + "<br/>" + value + d.af_value + "<br/>";
+            var result = year + d.year + "<br/>" + value + d.ou_value + "<br/>";
 
             tooltip.html(result)
                 .style("left", (d3.event.pageX + 10) + "px")
@@ -447,15 +375,34 @@ function af(){
                 .transition()
                 .duration(200) // ms
                 .style("opacity", .9) // started as 0!
-        };
+        })
+            .on("mouseleave",function(d){
+                tooltip.transition()
+                    .duration(300) // ms
+                    .style("opacity", 0); // don't care about position!
+            });
+    });
+}
 
-        var mouseLeave = function(d) {
-            tooltip.transition()
-                .duration(300) // ms
-                .style("opacity", 0); // don't care about position!
-        };
+function af(){
+    // Get data again
+    d3.csv("data/1987-2017.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.year = +d.year;
+            d.af_value = +d.af_value;
 
-        // Select svg to apply changes to
+            console.log(d.year);
+        });
+
+        // Scale range of the data
+        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
+        y.domain([d3.min(data, function(d) { return d.af_value*-1; }), d3.max(data, function (d) {return d.af_value; })]);
+
+        var tooltip = d3.select("#scatterPlot")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 10);
+
         vis = d3.select("#scatterPlot").transition();
         vis.select(".x.axis")
             .duration(750)
@@ -471,42 +418,14 @@ function af(){
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
-            .on("mouseover", mouseOver())
-            .on("mouseleave", mouseLeave);
-    });
-}
 
-function sa(){
-    // Get data again
-    d3.csv("data/1987-2017.csv", function(error, data) {
-        data.forEach(function(d) {
-            d.year = +d.year;
-            d.na_value = +d.na_value;
-            d.as_value = +d.as_value;
-            d.eu_value = +d.eu_value;
-            d.ou_value = +d.ou_value;
-            d.af_value = +d.af_value;
-            d.sa_value = +d.sa_value;
-        });
-
-        // Scale range of the data
-        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
-        y.domain([d3.min(data, function(d) { return d.sa_value*-1; }), d3.max(data, function (d) {return d.sa_value; })]);
-
-        // Add the tooltip container to container-fluid
-        // it's invisible and its position/contents are defined during mouseover
-        var tooltip = d3.select("#scatterPlot")
-            .append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0);
-
-        // tooltip mouseover event handler
-        var mouseOver = function(d) {
+        var vis2 = d3.select("#scatterPlot").selectAll("circle");
+        vis2.on("mouseover",function(d){
             var yearString = "Year: ";
             var valueString = "Anomaly: ";
             var year = yearString.fontcolor("#107896");
             var value = valueString.fontcolor("#C02F1D");
-            var result = year + d.year + "<br/>" + value + d.sa_value + "<br/>";
+            var result = year + d.year + "<br/>" + value + d.af_value + "<br/>";
 
             tooltip.html(result)
                 .style("left", (d3.event.pageX + 10) + "px")
@@ -515,15 +434,34 @@ function sa(){
                 .transition()
                 .duration(200) // ms
                 .style("opacity", .9) // started as 0!
-        };
+        })
+            .on("mouseleave",function(d){
+                tooltip.transition()
+                    .duration(300) // ms
+                    .style("opacity", 0); // don't care about position!
+            });
+    });
+}
 
-        var mouseLeave = function(d) {
-            tooltip.transition()
-                .duration(300) // ms
-                .style("opacity", 0); // don't care about position!
-        };
+function sa(){
+    // Get data again
+    d3.csv("data/1987-2017.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.year = +d.year;
+            d.sa_value = +d.sa_value;
 
-        // Select svg to apply changes to
+            console.log(d.year);
+        });
+
+        // Scale range of the data
+        x.domain([d3.min(data, function(d) { return d.year; }), d3.max(data, function (d) { return d.year; })]);
+        y.domain([d3.min(data, function(d) { return d.sa_value*-1; }), d3.max(data, function (d) {return d.sa_value; })]);
+
+        var tooltip = d3.select("#scatterPlot")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 10);
+
         vis = d3.select("#scatterPlot").transition();
         vis.select(".x.axis")
             .duration(750)
@@ -539,7 +477,27 @@ function sa(){
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
-            .on("mouseover", mouseOver())
-            .on("mouseleave", mouseLeave);
+
+        var vis2 = d3.select("#scatterPlot").selectAll("circle");
+        vis2.on("mouseover",function(d){
+            var yearString = "Year: ";
+            var valueString = "Anomaly: ";
+            var year = yearString.fontcolor("#107896");
+            var value = valueString.fontcolor("#C02F1D");
+            var result = year + d.year + "<br/>" + value + d.sa_value + "<br/>";
+
+            tooltip.html(result)
+                .style("left", (d3.event.pageX + 10) + "px")
+                .style("top", (d3.event.pageY - 28) + "px")
+                .style("padding", "5px")
+                .transition()
+                .duration(200) // ms
+                .style("opacity", .9) // started as 0!
+        })
+            .on("mouseleave",function(d){
+                tooltip.transition()
+                    .duration(300) // ms
+                    .style("opacity", 0); // don't care about position!
+            });
     });
 }

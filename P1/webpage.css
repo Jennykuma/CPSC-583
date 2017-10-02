@@ -1,3 +1,74 @@
-.body {
-    background-color: lightblue;
+body {
+    background-color: #a6ddf1;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.row-fluid {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+}
+
+#title {
+    font-size: 50px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    color: black;
+
+}
+
+.label {
+    font-family: "Nunito", sans-serif;
+    font-size: 90%;
+    font-weight: normal;
+    letter-spacing: 2.0px;
+}
+
+.grid line {
+    stroke: darkgrey;
+    stroke-opacity: 0.2;
+    shape-rendering: crispEdges;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.axis {
+    font-size: 11px;
+    color: white;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #fff;
+    shape-rendering: auto;
+    font-size: 12px;
+}
+
+.tooltip {
+    position: absolute;
+    font-size: 12px;
+    width:  auto;
+    height: auto;
+    pointer-events: none;
+    background-color: white;
+    color: black;
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    width: auto;
+}
+
+#description-box {
+    margin-top: 70px;
+    height: 250px;
+}
+
+#button-box {
+
 }

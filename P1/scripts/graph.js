@@ -154,6 +154,7 @@ function na(){ // North America
         data.forEach(function(d) {
             d.year = +d.year;
             d.na_value = +d.na_value;
+            d.na_avg = +d.na_avg;
 
             console.log(d.year);
         });
@@ -204,6 +205,7 @@ function na(){ // North America
                     .duration(300) // ms
                     .style("opacity", 0); // don't care about position!
             });
+
     });
 }
 

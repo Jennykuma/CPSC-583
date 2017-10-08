@@ -144,11 +144,36 @@ d3.csv("data/1987-2017.csv", function(error, data) {
         .style("fill-opacity", .8) // set fill opacity
         .style("stroke", "none")    // set line colour
         .style("fill", "white")   // set fill colour
+        .style("opacity", 0) // set the graph dots to be none
         .on("mouseover", mouseOver)
         .on("mouseleave", mouseLeave);
 });
 
+var na_active = 0;
+var as_active = 0;
+var eu_active = 0;
+var ou_active = 0;
+var af_active = 0;
+var sa_active = 0;
+/*
+ var line = d3.line()
+ .x(function(d) {
+ return x(d.year);
+ })
+ .y(function(d) {
+ return y(d.as_value);
+ });*/
+
+
 function na(){ // North America
+    toggle_off();
+    na_active = 1;
+    as_active = 0;
+    eu_active = 0;
+    ou_active = 0;
+    af_active = 0;
+    sa_active = 0;
+
     // Get data again
     d3.csv("data/1987-2017.csv", function(error, data) {
         data.forEach(function(d) {
@@ -183,6 +208,7 @@ function na(){ // North America
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
+            .style("opacity", 100) // set the graph dots to show
 
         var vis2 = d3.select("#scatterPlot").selectAll("circle");
         vis2.on("mouseover",function(d){
@@ -210,6 +236,14 @@ function na(){ // North America
 }
 
 function as(){ // Asia
+    toggle_off()
+    na_active = 0;
+    as_active = 1;
+    eu_active = 0;
+    ou_active = 0;
+    af_active = 0;
+    sa_active = 0;
+
     // Get data again
     d3.csv("data/1987-2017.csv", function(error, data) {
         data.forEach(function(d) {
@@ -243,6 +277,7 @@ function as(){ // Asia
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
+            .style("opacity", 100) // set the graph dots to show
 
         var vis2 = d3.select("#scatterPlot").selectAll("circle");
         vis2.on("mouseover",function(d){
@@ -269,6 +304,14 @@ function as(){ // Asia
 }
 
 function eu(){ // Europe
+    toggle_off();
+    na_active = 0;
+    as_active = 0;
+    eu_active = 1;
+    ou_active = 0;
+    af_active = 0;
+    sa_active = 0;
+
     // Get data again
     d3.csv("data/1987-2017.csv", function(error, data) {
         data.forEach(function(d) {
@@ -302,6 +345,7 @@ function eu(){ // Europe
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
+            .style("opacity", 100) // set the graph dots to show
 
         var vis2 = d3.select("#scatterPlot").selectAll("circle");
         vis2.on("mouseover",function(d){
@@ -328,6 +372,14 @@ function eu(){ // Europe
 }
 
 function oc(){ // Europe
+    toggle_off();
+    na_active = 0;
+    as_active = 0;
+    eu_active = 0;
+    ou_active = 1;
+    af_active = 0;
+    sa_active = 0;
+
     // Get data again
     d3.csv("data/1987-2017.csv", function(error, data) {
         data.forEach(function(d) {
@@ -361,6 +413,7 @@ function oc(){ // Europe
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
+            .style("opacity", 100) // set the graph dots to show
 
         var vis2 = d3.select("#scatterPlot").selectAll("circle");
         vis2.on("mouseover",function(d){
@@ -387,6 +440,14 @@ function oc(){ // Europe
 }
 
 function af(){
+    toggle_off();
+    na_active = 0;
+    as_active = 0;
+    eu_active = 0;
+    ou_active = 0;
+    af_active = 1;
+    sa_active = 0;
+
     // Get data again
     d3.csv("data/1987-2017.csv", function(error, data) {
         data.forEach(function(d) {
@@ -420,6 +481,8 @@ function af(){
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
+            .style("opacity", 100) // set the graph dots to show
+
 
         var vis2 = d3.select("#scatterPlot").selectAll("circle");
         vis2.on("mouseover",function(d){
@@ -446,6 +509,14 @@ function af(){
 }
 
 function sa(){
+    toggle_off();
+    na_active = 0;
+    as_active = 0;
+    eu_active = 0;
+    ou_active = 0;
+    af_active = 0;
+    sa_active = 1;
+
     // Get data again
     d3.csv("data/1987-2017.csv", function(error, data) {
         data.forEach(function(d) {
@@ -479,6 +550,7 @@ function sa(){
             .style("fill-opacity", .8) // set fill opacity
             .style("stroke", "none")   // set line colour
             .style("fill", "white")   // set fill colour
+            .style("opacity", 100) // set the graph dots to show
 
         var vis2 = d3.select("#scatterPlot").selectAll("circle");
         vis2.on("mouseover",function(d){
@@ -502,4 +574,121 @@ function sa(){
                     .style("opacity", 0); // don't care about position!
             });
     });
+}
+
+function toggle_on(){
+
+    d3.csv("data/1987-2017.csv", function(error, data) {
+        data.forEach(function (d) {
+        });
+
+        if (na_active == 1){
+            var line = d3.line()
+                .x(function(d) {
+                    return x(d.year);
+                })
+                .y(function(d) {
+                    return y(d.na_value);
+                });
+
+            var vis2 = d3.select("#scatterPlot").select("g");
+            vis2.append("path")
+                .datum(data)
+                .attr("class", "line")
+                .attr("d", line);
+
+        } else if (as_active == 1){
+            var line = d3.line()
+                .x(function(d) {
+                    return x(d.year);
+                })
+                .y(function(d) {
+                    return y(d.as_value);
+                });
+
+            var vis2 = d3.select("#scatterPlot").select("g");
+            vis2.append("path")
+                .datum(data)
+                .attr("class", "line")
+                .attr("d", line);
+
+        } else if (eu_active == 1){
+            var line = d3.line()
+                .x(function(d) {
+                    return x(d.year);
+                })
+                .y(function(d) {
+                    return y(d.eu_value);
+                });
+            var vis2 = d3.select("#scatterPlot").select("g");
+            vis2.append("path")
+                .datum(data)
+                .attr("class", "line")
+                .attr("d", line);
+        } else if (ou_active == 1){
+            var line = d3.line()
+                .x(function(d) {
+                    return x(d.year);
+                })
+                .y(function(d) {
+                    return y(d.ou_value);
+                });
+            var vis2 = d3.select("#scatterPlot").select("g");
+            vis2.append("path")
+                .datum(data)
+                .attr("class", "line")
+                .attr("d", line);
+
+        } else if (af_active == 1){
+            var line = d3.line()
+                .x(function(d) {
+                    return x(d.year);
+                })
+                .y(function(d) {
+                    return y(d.af_value);
+                });
+            var vis2 = d3.select("#scatterPlot").select("g");
+            vis2.append("path")
+                .datum(data)
+                .attr("class", "line")
+                .attr("d", line);
+
+        } else if (sa_active == 1){
+            var line = d3.line()
+                .x(function(d) {
+                    return x(d.year);
+                })
+                .y(function(d) {
+                    return y(d.sa_value);
+                });
+            var vis2 = d3.select("#scatterPlot").select("g");
+            vis2.append("path")
+                .datum(data)
+                .attr("class", "line")
+                .attr("d", line);
+
+        }else{
+            var line = d3.line()
+                .x(function(d) {
+                    return x(d.year);
+                })
+                .y(function(d) {
+                    return y(d.na_value);
+                });
+            var vis2 = d3.select("#scatterPlot").select("g");
+            vis2.append("path")
+                .datum(data)
+                .attr("class", "line")
+                .attr("d", line);
+            vis.append("path")
+                .datum(data)
+                .attr("class", "line")
+                .attr("d", line);
+        }
+    });
+}
+
+
+function toggle_off(){
+    d3.select(".line").remove();
 }

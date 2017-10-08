@@ -18,6 +18,11 @@ body {
 
 }
 
+.active {
+    background-color: #a6ddf1 !important;
+    color: white !important;
+}
+
 .label {
     font-family: "Nunito", sans-serif;
     font-size: 90%;
@@ -36,7 +41,7 @@ body {
 }
 
 .axis {
-    font-size: 11px;
+    font-size: 12px;
     color: white;
 }
 
@@ -69,6 +74,8 @@ body {
     height: 250px;
 }
 
-#button-box {
-
+.line {
+    stroke: #ffffff;
+    fill: none;
+    stroke-width: 3;
 }

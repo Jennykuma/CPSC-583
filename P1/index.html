@@ -57,10 +57,10 @@
                         <button id="af" type="button" class="btn btn-default" value="Update" onclick="af();">Africa</button>
                         <button id="sa" type="button" class="btn btn-default" value="Update" onclick="sa();">South America</button>
                     </div>
-
-                    <h4> Enable Line of Best Fit </h4>
-                        <button id="avgOn" type="button" class="btn btn-default" value="Update" onclick="avgOn();">Toggle On</button>
-                        <button id="avgOff" type="button" class="btn btn-default" value="Update" onclick="avgOff();">Toggle Off</button>
+                    <br><p></p>
+                    <h4> Enable to Connect the Points!</h4>
+                        <button id="avgOn" type="button" class="btn btn-default" value="Update" onclick="toggle_on();">Toggle On</button>
+                        <button id="avgOff" type="button" class="btn btn-default" value="Update" onclick="toggle_off();">Toggle Off</button>
                 </div> <!-- button-box -->
             </div> <!-- box-container -->
 
@@ -75,6 +75,12 @@
         $(document).ready(function(){
             $(".container-fluid").fadeIn("3000");
         });
+
+        $("button").click(function(){
+            $("button").removeClass("active");
+            $(this).addClass("active");
+        });
+
     </script>
 
 </body>

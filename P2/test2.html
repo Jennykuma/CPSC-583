@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collapsible tree in reusable format using D3 v4</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <link rel="stylesheet" href="test.css">
+    <script src="scripts/test.js"></script>
+</head>
+<body>
+
+<div id="chart"></div>
+
+<script>
+
+    var myTree = tree().height(500).width(960);
+
+    d3.text('data/spotifyData_tab.tsv', function(error, text) {
+        if (error) throw error;
+        var table = [{
+            name: 'playlist',
+            parent: null
+        }];
+
+        var genre = [];
+        var subgenre = [];
+        var subsubgenre = [];
+        var artist = [];
+        var song = [];
+
+        d3.tsvParseRows(text, function (d, i) {
+            if (d[0].startsWith('#')) return;
+
+            if (!genre.find(function(element){ return element === d[0]; })) {
+                table.push({
+                    name: d[0],
+                    parent: "playlist"
+                });
+                genre.push(d[0]);
+            }
+
+            if (!subgenre.find(function(element){ return element === d[1]; })) {
+                if (d[1] != "Sub-genre") {
+                    table.push({
+                        name: d[1],
+                        parent: d[0]
+                    });
+                    subgenre.push(d[1]);
+                }
+            }
+            if (!subsubgenre.find(function(element){ return element === d[2]; })) {
+                if (d[2] != "Sub-sub genre") {
+                table.push({
+                    name: d[2],
+                    parent: d[1]
+                });
+                subsubgenre.push(d[2]);
+                }
+            }
+            if (!artist.find(function(element){ return element === d[3]; })) {
+                if (d[2] == "Sub-sub genre" && d[1] == "Sub-genre") {
+                    table.push({
+                        name: d[3],
+                        parent: d[0]
+                    });
+                    artist.push(d[3]);
+                } else if (d[2] == "Sub-sub genre"){
+                    table.push({
+                        name: d[3],
+                        parent: d[1]
+                    });
+                    artist.push(d[3]);
+                } else {
+                    table.push({
+                        name: d[3],
+                        parent: d[2]
+                    });
+                }
+            }
+            if (!song.find(function(element){ return element === d[4]; })) {
+                table.push({
+                    name: d[4],
+                    parent: d[3]
+                });
+                song.push(d[4]);
+            }
+
+        /*
+        var genes = [];
+        var drugs = [];
+        d3.tsvParseRows(text, function (d, i) {
+            if (d[0].startsWith('#')) return;
+
+            if (!genes.find(function(element){ return element === d[5]; })) {
+                table.push({
+                    name: d[5],
+                    parent: d[6]
+                });
+                genes.push(d[5]);
+            }
+
+            if (!drugs.find(function(element){ return element === d[6]; })) {
+                table.push({
+                    name: d[6],
+                    parent: "detected"
+                });
+                drugs.push(d[6]);
+            }*/
+        });
+
+        var root = d3.stratify()
+            .id(function(d) { return d.name; })
+            .parentId(function (d) { return d.parent; })
+            (table);
+
+        myTree.data(root);
+
+        d3.select('#chart')
+            .call(myTree);
+    });
+
+
+</script>
+
+</body>
+</html>

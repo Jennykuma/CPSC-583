@@ -13,7 +13,7 @@
 
 <script>
 
-    var myTree = tree().height(500).width(960);
+    var myTree = tree().height(1080).width(1920);
 
     d3.text('data/spotifyData_tab.tsv', function(error, text) {
         if (error) throw error;
@@ -85,28 +85,6 @@
                 });
                 song.push(d[4]);
             }
-
-        /*
-        var genes = [];
-        var drugs = [];
-        d3.tsvParseRows(text, function (d, i) {
-            if (d[0].startsWith('#')) return;
-
-            if (!genes.find(function(element){ return element === d[5]; })) {
-                table.push({
-                    name: d[5],
-                    parent: d[6]
-                });
-                genes.push(d[5]);
-            }
-
-            if (!drugs.find(function(element){ return element === d[6]; })) {
-                table.push({
-                    name: d[6],
-                    parent: "detected"
-                });
-                drugs.push(d[6]);
-            }*/
         });
 
         var root = d3.stratify()

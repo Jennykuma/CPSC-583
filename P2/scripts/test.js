@@ -74,11 +74,12 @@ function tree() {
                     .attr('class', 'node')
                     .attr('r', 1e-6)
                     .style('fill', function(d) {
-                        return d._children ? 'lightsteelblue' : '#fff';
+                        return d._children ? '#CA907E' : '#fff';
                     });
 
                 // add labels for the nodes
                 nodeEnter.append('text')
+                    .style("text-transform", "capitalize")
                     .attr('dy', '.35em')
                     .attr('x', function(d) {
                         return d.children || d._children ? 0 : 13;
@@ -115,9 +116,9 @@ function tree() {
 
                 // update the node attributes and style
                 nodeUpdate.select('circle.node')
-                    .attr('r', 9)
+                    .attr('r', 10)
                     .style('fill', function(d) {
-                        return d._children ? 'lightsteelblue' : '#fff';
+                        return d._children ? '#CA907E' : '#fff';
                     })
                     .attr('cursor', 'pointer');
 

@@ -1,6 +1,18 @@
+body {
+    background-color: #a6ddf1;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.row-fluid {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+}
+
 .node circle {
-    fill: #CA907E;
-    stroke: #994636;
+    fill: #fff;
+    stroke: steelblue;
     stroke-width: 3px;
 }
 

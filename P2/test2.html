@@ -13,14 +13,16 @@
 
 <script>
 
-    var myTree = tree().height(1080).width(1920);
+    var myTree = tree().height(1000).width(1920);
 
     d3.text('data/spotifyData_tab.tsv', function(error, text) {
         if (error) throw error;
         var table = [{
             name: 'playlist',
-            parent: null
+            parent: null,
+            value: 'start'
         }];
+
 
         var genre = [];
         var subgenre = [];
@@ -34,7 +36,8 @@
             if (!genre.find(function(element){ return element === d[0]; })) {
                 table.push({
                     name: d[0],
-                    parent: "playlist"
+                    parent: "playlist",
+                    value: 'genre'
                 });
                 genre.push(d[0]);
             }
@@ -43,7 +46,8 @@
                 if (d[1] != "Sub-genre") {
                     table.push({
                         name: d[1],
-                        parent: d[0]
+                        parent: d[0],
+                        value: 'subgenre'
                     });
                     subgenre.push(d[1]);
                 }
@@ -52,7 +56,8 @@
                 if (d[2] != "Sub-sub genre") {
                 table.push({
                     name: d[2],
-                    parent: d[1]
+                    parent: d[1],
+                    value: 'subsubgenre'
                 });
                 subsubgenre.push(d[2]);
                 }
@@ -61,19 +66,22 @@
                 if (d[2] == "Sub-sub genre" && d[1] == "Sub-genre") {
                     table.push({
                         name: d[3],
-                        parent: d[0]
+                        parent: d[0],
+                        value: 'artist'
                     });
                     artist.push(d[3]);
                 } else if (d[2] == "Sub-sub genre"){
                     table.push({
                         name: d[3],
-                        parent: d[1]
+                        parent: d[1],
+                        value: 'artist'
                     });
                     artist.push(d[3]);
                 } else {
                     table.push({
                         name: d[3],
-                        parent: d[2]
+                        parent: d[2],
+                        value: 'artist'
                     });
                     artist.push(d[3]);
                 }
@@ -81,14 +89,14 @@
             if (!song.find(function(element){ return element === d[4]; })) {
                 table.push({
                     name: d[4],
-                    parent: d[3]
+                    parent: d[3],
+                    value: 'song'
                 });
-                song.push(d[4]);
             }
         });
 
         var root = d3.stratify()
-            .id(function(d) { return d.name; })
+            .id(function(d) {return d.name; })
             .parentId(function (d) { return d.parent; })
             (table);
 

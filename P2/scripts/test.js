@@ -23,8 +23,6 @@ function tree() {
 
             // assign parent, children, height, depth
             var root = d3.hierarchy(data, function(d) { return d.children }); //TREE HERE
-            var something = createTree();
-            console.log("Something", something);
             //var root = createTree();
             root.x0 = height / 2; // left edge of the rectangle
             root.y0 = 0; // top edge of the triangle
@@ -59,7 +57,7 @@ function tree() {
 
                 // update the nodes ...
                 var node = svg.selectAll('g.node')
-                    .data(nodes, function(d) { return d.id || (d.id = ++i); });
+                    .data(nodes, function(d) {return d.id || (d.id = ++i); });
 
                 // Enter any new modes at the parent's previous position.
                 var nodeEnter = node.enter().append('g')
@@ -74,7 +72,7 @@ function tree() {
                     .attr('class', 'node')
                     .attr('r', 1e-6)
                     .style('fill', function(d) {
-                        return d._children ? '#CA907E' : '#fff';
+                        return d._children ? 'lightsteelblue' : '#fff';
                     });
 
                 // add labels for the nodes
@@ -90,6 +88,13 @@ function tree() {
                     .attr('text-anchor', function(d) {
                         return d.children || d._children ? 'middle' : 'start';
                     })
+                    .style("fill", function(d) {
+                        if(d.data.data.value == "start") return "white";
+                        if(d.data.data.value == "genre") return "green";
+                        if(d.data.data.value == "subgenre") return "yellow";
+                        if(d.data.data.value == "subsubgenre") return "purple";
+                        if(d.data.data.value == "artist") return "orange";
+                        if(d.data.data.value == "song") return "blue";})
                     .text(function(d) {
                         return (d.children || d._children) ? d.data.id.capitalize() : d.data.id;
                     });
@@ -116,9 +121,9 @@ function tree() {
 
                 // update the node attributes and style
                 nodeUpdate.select('circle.node')
-                    .attr('r', 10)
+                    .attr('r', 9)
                     .style('fill', function(d) {
-                        return d._children ? '#CA907E' : '#fff';
+                        return d._children ? 'lightsteelblue' : '#fff';
                     })
                     .attr('cursor', 'pointer');
 

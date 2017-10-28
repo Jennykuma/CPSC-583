@@ -72,7 +72,7 @@ function tree() {
                     .attr('class', 'node')
                     .attr('r', 1e-6)
                     .style('fill', function(d) {
-                        return d._children ? 'lightsteelblue' : '#fff';
+                        return d._children ? 'white' : '#fff';
                     });
 
                 // add labels for the nodes
@@ -89,12 +89,12 @@ function tree() {
                         return d.children || d._children ? 'middle' : 'start';
                     })
                     .style("fill", function(d) {
-                        if(d.data.data.value == "start") return "white";
-                        if(d.data.data.value == "genre") return "green";
-                        if(d.data.data.value == "subgenre") return "yellow";
-                        if(d.data.data.value == "subsubgenre") return "purple";
-                        if(d.data.data.value == "artist") return "orange";
-                        if(d.data.data.value == "song") return "blue";})
+                        if(d.data.data.value == "start") return "#ccc";
+                        if(d.data.data.value == "genre") return "#F47C79";
+                        if(d.data.data.value == "subgenre") return "#FFE066";
+                        if(d.data.data.value == "subsubgenre") return "#06D6A0";
+                        if(d.data.data.value == "artist") return "#ADE25D";
+                        if(d.data.data.value == "song") return "#F3F9D2";})
                     .text(function(d) {
                         return (d.children || d._children) ? d.data.id.capitalize() : d.data.id;
                     });
@@ -123,7 +123,7 @@ function tree() {
                 nodeUpdate.select('circle.node')
                     .attr('r', 9)
                     .style('fill', function(d) {
-                        return d._children ? 'lightsteelblue' : '#fff';
+                        return d._children ? 'white' : '#fff';
                     })
                     .attr('cursor', 'pointer');
 

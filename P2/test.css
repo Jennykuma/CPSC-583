@@ -11,23 +11,32 @@ body {
 }
 
 #title {
-
     margin-top: 200px;
-
     font-size: 55px;
     letter-spacing: 2.5px;
     text-align: center;
     color: white;
 }
 
+.weblink {
+    color : #1ED760;
+    text-decoration : none;
+}
+
+.weblink:hover {
+    color : #fff;
+    text-decoration : none;
+}
+
 .box {
     background-color: rgba(0, 0, 0, 0.2);
     padding: 10px;
+    margin-left: 10px;
     width: auto;
 }
 
 #description-box {
-    height: 325px;
+    height: 350px;
 }
 
 #legend-box {

@@ -39,16 +39,18 @@
                     <p></p> <br>
                     This is a tree chart which shows songs that belong to different genres of music. <br>
                     <br>
-                    I got my spotify playlist songs and artists from exportify. <br>
-                    From there, I used the spotify API externally to get the genre of each artist. <br>
-                    Then I got my play count for each song from last.fm <br>
+                    I got my spotify playlist songs and artists from <a href="https://github.com/watsonbox/exportify" class="weblink">exportify</a>. <br>
+                    From there, I used the <a href="https://developer.spotify.com/web-api/console/get-track/" class="weblink">spotify web API</a>
+                    externally to get the genre of each artist. <br>
+                    Then I got my play count for each song from my account on <a href="www.last.fm" class="weblink">last.fm</a>
+                    which tracks the <br> songs I've been listening to. <br>
                     <p></p>
                     Then I formed and summarized my data into one spreadsheet and then manually <br>
                     created a tsv file to work with the tree. <br>
                     <p></p>
                     Feel free to click through the nodes to explore different genres, artists and songs <br>
                     that I've listened to for this playlist. <br>
-                    You may also hover over the notes to get a much more accurate reading of the data</p>
+                    You may also hover over the notes to get a much more accurate reading of the data!</p>
                 </div>
                 <p></p>
                 <div class="box" id="legend-box">
@@ -74,7 +76,7 @@
             <div id="chart" align="left" style="padding-left: 50px;"></div>
             <script>
 
-                var myTree = tree().height(1000).width(900);
+                var myTree = tree().height(1000).width(1200);
 
                 d3.text('data/spotifyData_tab.tsv', function(error, text) {
                     if (error) throw error;
@@ -90,6 +92,7 @@
                     var subsubgenre = [];
                     var artist = [];
                     var song = [];
+                    var hello = [];
 
                     d3.tsvParseRows(text, function (d, i) {
                         if (d[0].startsWith('#')) return;
@@ -151,9 +154,11 @@
                             table.push({
                                 name: d[4],
                                 parent: d[3],
-                                value: 'song'
+                                value: 'song',
+                                plays: d[5]
                             });
                         }
+                        console.log(d[5]);
                     });
 
                     var root = d3.stratify()

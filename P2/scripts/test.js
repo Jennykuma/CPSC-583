@@ -51,7 +51,7 @@ function tree() {
                     links = treeData.descendants().slice(1);
 
                 // normalise for fixed depth
-                nodes.forEach(function(d) { d.y = d.depth * 180; });
+                nodes.forEach(function(d) { d.y = d.depth * 200; });
 
                 // ****************** Nodes section ***************************
 
@@ -65,6 +65,8 @@ function tree() {
                     .attr('transform', function(d) {
                         return 'translate(' + (source.y0 + margin.top) + ',' + (source.x0 + margin.left) + ')';
                     })
+                    .on("mouseover", mouseover)
+                    .on("mouseout", mouseout)
                     .on('click', click);
 
                 // add circle for the nodes
@@ -78,6 +80,7 @@ function tree() {
                 // add labels for the nodes
                 nodeEnter.append('text')
                     .style("text-transform", "capitalize")
+                    .style("font-family", "Nunito")
                     .attr('dy', '.35em')
                     .attr('x', function(d) {
                         return d.children || d._children ? 0 : 13;
@@ -198,6 +201,24 @@ function tree() {
                         d._children = null;
                     }
                     update(d);
+                }
+
+                function mouseover(d) {
+                    if(d.data.data.value == "song"){
+                        d3.select(this).append("text")
+                            .style('fill', 'white')
+                            .style("font-family", "Nunito")
+                            .attr("class", "hover")
+                            .attr('transform', function(d){
+                                return 'translate(-80, -15)';
+                            })
+                            .text("Playcount: " + d.data.data.plays);
+                    }
+                }
+
+// Toggle children on click.
+                function mouseout(d) {
+                    d3.select(this).select("text.hover").remove();
                 }
 
             }

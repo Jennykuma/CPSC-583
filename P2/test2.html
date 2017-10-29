@@ -26,7 +26,7 @@
 </head>
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="display: none">
         <script>
             d3.selectAll("h1").transition().style("color","white").duration(400);
         </script>
@@ -36,15 +36,19 @@
                 <h1 id="title"> ♫ My Spotify Data ♫ </h1>
                 <div class="box" id="description-box">
                     <h2> ♫ About the Visualization</h2>
+                    <p></p> <br>
                     This is a tree chart which shows songs that belong to different genres of music. <br>
                     <br>
-                    I decided to visualize my playlist because I wanted to see what it would look like <br>
-                    with everything being visualized to see what type of music I like more. <br>
-                    So then this means that the data points show how much the temperatures have <br>
-                    deviated from the standard predicted temperatures </p>
-                    Feel free to click through the different regions to look at the anomalies <br>
-                    You may also hover over the bubbles to get a much more accurate reading of the data</p>
-                    Data is from: <a class="link" href="https://www.ncdc.noaa.gov/">https://www.ncdc.noaa.gov/</a></p>
+                    I got my spotify playlist songs and artists from exportify. <br>
+                    From there, I used the spotify API externally to get the genre of each artist. <br>
+                    Then I got my play count for each song from last.fm <br>
+                    <p></p>
+                    Then I formed and summarized my data into one spreadsheet and then manually <br>
+                    created a tsv file to work with the tree. <br>
+                    <p></p>
+                    Feel free to click through the nodes to explore different genres, artists and songs <br>
+                    that I've listened to for this playlist. <br>
+                    You may also hover over the notes to get a much more accurate reading of the data</p>
                 </div>
                 <p></p>
                 <div class="box" id="legend-box">
@@ -166,5 +170,12 @@
 
         </div> <!-- row-fluid -->
     </div> <!-- container-fluid -->
+
+
+    <script>
+        $(document).ready(function(){
+            $(".container-fluid").fadeIn("3000");
+        });
+    </script>
 </body>
 </html>

@@ -26,28 +26,28 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/styles.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+                <state relative-caret-position="238">
+                  <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="54" column="94" lean-forward="false" selection-start-line="54" selection-start-column="94" selection-end-line="54" selection-end-column="94" />
+                <state relative-caret-position="187">
+                  <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="e#3023#3030#0" expanded="true" />
-                    <element signature="e#3177#3184#0" expanded="true" />
-                    <element signature="e#3333#3340#0" expanded="true" />
-                    <element signature="e#3559#3566#0" expanded="true" />
-                    <element signature="e#3784#3791#0" expanded="true" />
+                    <element signature="e#3028#3035#0" expanded="true" />
+                    <element signature="e#3182#3189#0" expanded="true" />
+                    <element signature="e#3338#3345#0" expanded="true" />
+                    <element signature="e#3564#3571#0" expanded="true" />
+                    <element signature="e#3789#3796#0" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
@@ -58,11 +58,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/scripts/test.js">
+          <file leaf-file-name="treeNodes.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/scripts/treeNodes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1037">
-                  <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+                <state relative-caret-position="340">
+                  <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -112,9 +112,9 @@
         <option value="$PROJECT_DIR$/../P1/index.html" />
         <option value="$PROJECT_DIR$/test.css" />
         <option value="$PROJECT_DIR$/test2.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/scripts/test.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -155,6 +155,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="P2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="P2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="P2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="P2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="P2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -610,7 +638,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53346000" />
+    <option name="totallyTimeSpent" value="53523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -720,11 +748,11 @@
           <caret line="86" column="13" lean-forward="true" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3023#3030#0" expanded="true" />
-            <element signature="e#3177#3184#0" expanded="true" />
-            <element signature="e#3333#3340#0" expanded="true" />
-            <element signature="e#3559#3566#0" expanded="true" />
-            <element signature="e#3784#3791#0" expanded="true" />
+            <element signature="e#3028#3035#0" expanded="true" />
+            <element signature="e#3182#3189#0" expanded="true" />
+            <element signature="e#3338#3345#0" expanded="true" />
+            <element signature="e#3564#3571#0" expanded="true" />
+            <element signature="e#3789#3796#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -738,7 +766,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/test.js">
+    <entry file="file://$PROJECT_DIR$/scripts/treeNodes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
@@ -770,17 +798,17 @@
           <caret line="42" column="80" lean-forward="false" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3023#3030#0" expanded="true" />
-            <element signature="e#3177#3184#0" expanded="true" />
-            <element signature="e#3333#3340#0" expanded="true" />
-            <element signature="e#3559#3566#0" expanded="true" />
-            <element signature="e#3784#3791#0" expanded="true" />
+            <element signature="e#3028#3035#0" expanded="true" />
+            <element signature="e#3182#3189#0" expanded="true" />
+            <element signature="e#3338#3345#0" expanded="true" />
+            <element signature="e#3564#3571#0" expanded="true" />
+            <element signature="e#3789#3796#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/test.js">
+    <entry file="file://$PROJECT_DIR$/scripts/treeNodes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="60" column="37" lean-forward="false" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
@@ -806,7 +834,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html" />
-    <entry file="file://$PROJECT_DIR$/scripts/test.js">
+    <entry file="file://$PROJECT_DIR$/scripts/treeNodes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3893">
           <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="270" selection-end-column="6" />
@@ -838,17 +866,17 @@
           <caret line="50" column="7" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3023#3030#0" expanded="true" />
-            <element signature="e#3177#3184#0" expanded="true" />
-            <element signature="e#3333#3340#0" expanded="true" />
-            <element signature="e#3559#3566#0" expanded="true" />
-            <element signature="e#3784#3791#0" expanded="true" />
+            <element signature="e#3028#3035#0" expanded="true" />
+            <element signature="e#3182#3189#0" expanded="true" />
+            <element signature="e#3338#3345#0" expanded="true" />
+            <element signature="e#3564#3571#0" expanded="true" />
+            <element signature="e#3789#3796#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/test.js">
+    <entry file="file://$PROJECT_DIR$/scripts/treeNodes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3893">
           <caret line="229" column="0" lean-forward="false" selection-start-line="229" selection-start-column="0" selection-end-line="270" selection-end-column="6" />
@@ -880,17 +908,17 @@
           <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3023#3030#0" expanded="true" />
-            <element signature="e#3177#3184#0" expanded="true" />
-            <element signature="e#3333#3340#0" expanded="true" />
-            <element signature="e#3559#3566#0" expanded="true" />
-            <element signature="e#3784#3791#0" expanded="true" />
+            <element signature="e#3028#3035#0" expanded="true" />
+            <element signature="e#3182#3189#0" expanded="true" />
+            <element signature="e#3338#3345#0" expanded="true" />
+            <element signature="e#3564#3571#0" expanded="true" />
+            <element signature="e#3789#3796#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/test.js">
+    <entry file="file://$PROJECT_DIR$/scripts/treeNodes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4216">
           <caret line="248" column="34" lean-forward="true" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
@@ -1055,34 +1083,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/test.js">
+    <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="70" column="42" lean-forward="true" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+        <state relative-caret-position="238">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="54" column="94" lean-forward="false" selection-start-line="54" selection-start-column="94" selection-end-line="54" selection-end-column="94" />
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3023#3030#0" expanded="true" />
-            <element signature="e#3177#3184#0" expanded="true" />
-            <element signature="e#3333#3340#0" expanded="true" />
-            <element signature="e#3559#3566#0" expanded="true" />
-            <element signature="e#3784#3791#0" expanded="true" />
+            <element signature="e#3028#3035#0" expanded="true" />
+            <element signature="e#3182#3189#0" expanded="true" />
+            <element signature="e#3338#3345#0" expanded="true" />
+            <element signature="e#3564#3571#0" expanded="true" />
+            <element signature="e#3789#3796#0" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles.css">
+    <entry file="file://$PROJECT_DIR$/scripts/treeNodes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding />
         </state>
       </provider>

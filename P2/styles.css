@@ -1,6 +1,6 @@
 body {
-    background-color: white;
-    color: black;
+    background-color: #272D2D;
+    color: white;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -11,23 +11,79 @@ body {
 }
 
 #title {
-    font-size: 50px;
+    margin-top: 200px;
+    font-size: 55px;
     letter-spacing: 2.5px;
     text-align: center;
-    color: black;
+    color: white;
+}
 
+.weblink {
+    color : #1ED760;
+    text-decoration : none;
+}
+
+.weblink:hover {
+    color : #fff;
+    text-decoration : none;
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-left: 10px;
+    width: auto;
+}
+
+#description-box {
+    height: 400px;
+}
+
+#legend-box {
+    height: 200px;
+    font-size: 15px;
+}
+
+.legend {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.genre {
+    background: #F47C79;
+}
+
+.subgenre {
+    background: #FFE066;
+}
+
+.subsubgenre {
+    background: #06D6A0;
+}
+
+.artist {
+    background: #ADE25D;
+}
+
+.song {
+    background: #F3F9D2;
 }
 
 .node circle {
-    fill: #fff;
-    stroke: steelblue;
+    fill: white;
+    stroke: white;
     stroke-width: 3px;
 }
 
-.node text { font: 12px sans-serif; }
+.node text {
+    font: 12px sans-serif;
+}
 
 .link {
     fill: none;
     stroke: #ccc;
-    stroke-width: 2px;
 }

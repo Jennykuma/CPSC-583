@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> P3: Smartphone Market Shares 2009-2017 </title>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="scripts/d3.min.js"></script>
+    <script src="scripts/pie.js" type='text/javascript'></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- JS & CSS & Font Files/Links -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div id="box-container" align="left">
+            <h1 id="title"> Smartphone Market Shares Worldwide Q3 2009 - Q3 2017 </h1>
+            <div class="box" id="description-box">
+                <h2> ♫ About the Visualization</h2>
+                <p></p> <br>
+                This is a tree chart which shows songs that belong to different genres of music. <br>
+                <br>
+                I got my spotify playlist songs and artists from <a href="https://github.com/watsonbox/exportify" class="weblink">exportify</a>. <br>
+                From there, I used the <a href="https://developer.spotify.com/web-api/console/get-track/" class="weblink">spotify web API</a>
+                externally to get the genre of each artist. <br>
+                Then I got my play count for each song from my account on <a href="www.last.fm" class="weblink">last.fm</a>
+                which tracks the <br> songs I've been listening to. <br>
+                <p></p>
+                Then I formed and summarized my data into one spreadsheet and then manually <br>
+                created a tsv file to work with the tree. <br>
+                <p></p>
+                Feel free to click through the nodes to explore different genres, artists and songs <br>
+                that I've listened to for this playlist. <br>
+                You may also hover over the notes to get a much more accurate reading of the data!</p>
+            </div>
+            <p></p>
+            <div class="box" id="legend-box">
+                <h2> ♫ Legend </h2>
+                <br>
+                <div class="row-fluid" >
+                    <div class="legend genre"></div> &nbsp; &mdash; &nbsp; Main Genre
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="legend subgenre"></div> &nbsp; &mdash; &nbsp; Sub Genre
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="legend subsubgenre"></div> &nbsp; &mdash; &nbsp; Sub Sub Genre
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class="row-fluid">
+                    <div class="legend artist"></div> &nbsp; &mdash; &nbsp; Artist
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;
+                    <div class="legend song"></div> &nbsp; &mdash; &nbsp; Song Name
+                </div>
+            </div>
+        </div> <!-- box-container -->
+
+    <div class="row-fluid">
+        <div id="tree" align="left" style="padding-top: 100px;">
+            <script src="scripts/pie.js"></script>
+        </div>
+    </div> <!-- row-fluid -->
+</div> <!-- container-fluid -->
+</body>
+</html>

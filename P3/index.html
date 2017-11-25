@@ -25,20 +25,84 @@
 </head>
 <body>
 <div class="container-fluid">
+    <h1 id="title"> Smartphone Market Shares 2010 - 2017 </h1>
     <div class="row-fluid">
-        <script src="scripts/pie.js"></script>
-        <h4> Buttons </h4>
-        <div class="year-btn-group">
-            <form>
-                <label><input type="radio" name="dataset" value="yr2010" checked> 2010</label>
-                <label><input type="radio" name="dataset" value="yr2011"> 2011</label>
-                <label><input type="radio" name="dataset" value="yr2012"> 2012</label>
-                <label><input type="radio" name="dataset" value="yr2013"> 2013</label>
-                <label><input type="radio" name="dataset" value="yr2014"> 2014</label>
-                <label><input type="radio" name="dataset" value="yr2015"> 2015</label>
-                <label><input type="radio" name="dataset" value="yr2016"> 2016</label>
-                <label><input type="radio" name="dataset" value="yr2017"> 2017</label>
-            </form>
+        <div id="box-container" align="left">
+            <div class="box" id="description-box">
+                <h2> 📱 About the Visualization</h2>
+                <p></p> <br>
+                This is a pie chart which shows the global market share of shipments <br> by smartphone vendors. <br>
+                <br>
+                As a follower of technology and specifically smartphones, I decided to analyze the <br> global market
+                share (in shipments) currently held by smartphone vendors.<br>
+                The data goes from the First Quarter of 2010 to the Third Quarter of 2017.<br>
+                <p></p>
+                <br>
+                Citation: <br>
+                IDC. (n.d.). Global market share held by leading smartphone vendors <br> from 4th quarter 2009 to 3rd quarter 2017.
+                In Statista - The Statistics Portal. <br>
+                Retrieved November 21, 2017, from
+                <a href="https://www.statista.com/statistics/271496/global-market-share-held-by-smartphone-vendors-since-4th-quarter-2009/." class="weblink">here</a>
+            </div>
+            <p></p>
+            <div class="box" id="legend-box">
+                <h2> 📱 Legend </h2>
+                <br>
+                <div class="row-fluid" >
+                    <div class="table">
+                        <div class="cell"><div class="legend samsung"></div> &nbsp; &mdash; &nbsp; Samsung</div>
+                        <div class="cell"><div class="legend apple"></div> &nbsp; &mdash; &nbsp; Apple</div>
+                        <div class="cell"><div class="legend lg"></div> &nbsp; &mdash; &nbsp; LG</div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="table">
+                        <div class="cell"><div class="legend lenovo"></div> &nbsp; &mdash; &nbsp; Lenovo</div>
+                        <div class="cell"><div class="legend zte"></div> &nbsp; &mdash; &nbsp; ZTE</div>
+                        <div class="cell"><div class="legend huawei"></div> &nbsp; &mdash; &nbsp; Huawei</div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="table">
+                        <div class="cell"><div class="legend oppo"></div> &nbsp; &mdash; &nbsp; OPPO</div>
+                        <div class="cell"><div class="legend vivo"></div> &nbsp; &mdash; &nbsp; vivo</div>
+                        <div class="cell"><div class="legend xiaomi"></div> &nbsp; &mdash; &nbsp; xiaomi</div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="table">
+                        <div class="cell"><div class="legend sony"></div> &nbsp; &mdash; &nbsp; Sony</div>
+                        <div class="cell"><div class="legend rim"></div> &nbsp; &mdash; &nbsp; RIM</div>
+                        <div class="cell"><div class="legend htc"></div> &nbsp; &mdash; &nbsp; HTC</div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="table">
+                        <div class="cell"><div class="legend nokia"></div> &nbsp; &mdash; &nbsp; Nokia</div>
+                        <div class="cell"><div class="legend other"></div> &nbsp; &mdash; &nbsp; Other</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box" id="year-box">
+                <h1> 📱 Each Year </h1>
+                <br>
+                <div class="year-btn-group">
+                    <form>
+                        <label><input type="radio" name="dataset" value="yr2010" checked> 2010</label>
+                        <label><input type="radio" name="dataset" value="yr2011"> 2011</label>
+                        <label><input type="radio" name="dataset" value="yr2012"> 2012</label>
+                        <label><input type="radio" name="dataset" value="yr2013"> 2013</label>
+                        <br>
+                        <label><input type="radio" name="dataset" value="yr2014"> 2014</label>
+                        <label><input type="radio" name="dataset" value="yr2015"> 2015</label>
+                        <label><input type="radio" name="dataset" value="yr2016"> 2016</label>
+                        <label><input type="radio" name="dataset" value="yr2017"> 2017</label>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- box-container -->
+        <div class="pieChart" style="margin-top: 100px;">
+            <script src="scripts/pie.js"></script>
         </div>
     </div> <!-- row-fluid -->
 </div> <!-- container-fluid-->

@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    color: black;
+    color: white;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -22,19 +22,18 @@ body {
     background: #eee;
     box-shadow: 0 0 5px #999999;
     color: #333;
-    font-size: 12px;
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
     left: 130px;
     padding: 10px;
     position: absolute;
     text-align: center;
     top: 95px;
-    width: 80px;
+    width: 100px;
     z-index: 10;
     display: block;
     opacity: 0;
 }
-
-
 
 .link {
     fill: none;
@@ -42,20 +41,35 @@ body {
     stroke-width: 2px;
 }
 
+.weblink {
+    color: #c4f4f6;
+}
+
+.weblink:hover {
+    color: #9BCACC;
+}
+
 .box {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(59, 106, 135, 0.8);
     padding: 10px;
     margin-left: 10px;
     width: auto;
 }
 
 #description-box {
+    margin-top: 50px;
     height: 350px;
 }
 
 #legend-box {
-    height: 200px;
+    margin-top: 25px;
+    height: 275px;
     font-size: 15px;
+}
+
+#year-box {
+    margin-top: 25px;
+    height: 175px;
 }
 
 .legend {
@@ -67,24 +81,60 @@ body {
     border: 1px solid rgba(0, 0, 0, .2);
 }
 
-.genre {
-    background: #F47C79;
+.samsung {
+    background: #C6E2FF;
 }
 
-.subgenre {
-    background: #FFE066;
+.apple {
+    background: #FFC0CB;
 }
 
-.subsubgenre {
-    background: #06D6A0;
+.lg {
+    background: #CAFF70;
 }
 
-.artist {
-    background: #ADE25D;
+.lenovo {
+    background: #FFE4C4;
 }
 
-.song {
-    background: #F3F9D2;
+.zte {
+    background: #FFA07A;
+}
+
+.huawei {
+    background: #c4d4e0;
+}
+
+.oppo {
+    background: #FFEC8B;
+}
+
+.vivo {
+    background: #E6E6FA;
+}
+
+.xiaomi {
+    background: #EED2EE;
+}
+
+.sony {
+    background: #F5DEB3;
+}
+
+.rim {
+    background: #E5DACE;
+}
+
+.htc {
+    background: #edfafd;
+}
+
+.nokia {
+    background: #FFE4E1;
+}
+
+.other {
+    background: #C1FFC1;
 }
 
 .arc text {
@@ -94,4 +144,25 @@ body {
 
 .arc path {
     stroke: #fff;
+}
+
+.pieChart {
+    margin-left: 50px;
+}
+
+.table {
+    position:relative;  /*so children div can use 100% height and not go over */
+    width:100%; /* as long as this div's parent is body it will take up whole screen */
+    height:10px; /*make whatever you want */
+    padding:5px; /* will make that spacing you wanted */
+}
+
+.table .cell {
+    width:30%;
+    height:10%;
+    display:inline-block;
+}
+
+input[type="radio"]{
+    margin: 0 0px 0 55px;
 }

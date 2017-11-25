@@ -1,9 +1,9 @@
 
-var width = 960,
-    height = 500,
+var width = 700,
+    height = 600,
     radius = Math.min(width, height) / 2;
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+var color = d3.scaleOrdinal(['#C6E2FF','#FFC0CB','#CAFF70','#FFE4C4','#FFA07A','#c4d4e0','#FFEC8B', '#E6E6FA', '#EED2EE', '#F5DEB3', '#E5DACE', '#edfafd', '#FFE4E1', '#C1FFC1' ]);
 
 var pie = d3.pie()
     .value(function(d) { return d.yr2010; })
@@ -21,7 +21,7 @@ tooltip.append('div')
 tooltip.append('div')
     .attr('class', 'percent');
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select(".pieChart").append("svg")
     .attr("width", width)
     .attr("height", height)
     .append("g")
@@ -39,7 +39,6 @@ d3.tsv("data/test2.tsv", type, function(error, data) {
         .each(function(d) { this._current = d; }); // store the initial angles
 
     path.on('mouseover', function(d) {
-        console.log(d.data);
         tooltip.select('.label').html(d.data.company).style('color','black');
         tooltip.style('display', 'block');
         tooltip.style('opacity',2);

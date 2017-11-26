@@ -27,6 +27,15 @@ var svg = d3.select(".pieChart").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
+svg.append("text")
+    .attr("x", -280)
+    .attr("y",  -246)
+    .attr("text-anchor", "middle")
+    .style("fill", "#3B6A87")
+    .style("font-size", "30px")
+    .style("text-decoration", "underline")
+    .text("2010");
+
 d3.tsv("data/test2.tsv", type, function(error, data) {
     if (error) throw error;
 
@@ -39,10 +48,47 @@ d3.tsv("data/test2.tsv", type, function(error, data) {
         .each(function(d) { this._current = d; }); // store the initial angles
 
     path.on('mouseover', function(d) {
-        tooltip.select('.label').html(d.data.company).style('color','black');
-        tooltip.style('display', 'block');
-        tooltip.style('opacity',2);
-
+        if(document.getElementById('yr2010').checked) {
+            tooltip.select('.label').html(d.data.company).style('color', 'black');
+            tooltip.select('.percent').html(d.data.yr2010 + "%").style('color', 'black');
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+        }else if(document.getElementById('yr2011').checked) {
+            tooltip.select('.label').html(d.data.company).style('color', 'black');
+            tooltip.select('.percent').html(d.data.yr2011 + "%").style('color', 'black');
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+        }else if(document.getElementById('yr2012').checked) {
+            tooltip.select('.label').html(d.data.company).style('color', 'black');
+            tooltip.select('.percent').html(d.data.yr2012 + "%").style('color', 'black');
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+        }else if(document.getElementById('yr2013').checked) {
+            tooltip.select('.label').html(d.data.company).style('color', 'black');
+            tooltip.select('.percent').html(d.data.yr2013 + "%").style('color', 'black');
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+        }else if(document.getElementById('yr2014').checked) {
+            tooltip.select('.label').html(d.data.company).style('color', 'black');
+            tooltip.select('.percent').html(d.data.yr2014 + "%").style('color', 'black');
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+        }else if(document.getElementById('yr2015').checked) {
+            tooltip.select('.label').html(d.data.company).style('color', 'black');
+            tooltip.select('.percent').html(d.data.yr2015 + "%").style('color', 'black');
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+        }else if(document.getElementById('yr2016').checked) {
+            tooltip.select('.label').html(d.data.company).style('color', 'black');
+            tooltip.select('.percent').html(d.data.yr2016 + "%").style('color', 'black');
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+        }else if(document.getElementById('yr2017').checked) {
+            tooltip.select('.label').html(d.data.company).style('color', 'black');
+            tooltip.select('.percent').html(d.data.yr2017 + "%").style('color', 'black');
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+        }
     });
 
     path.on('mousemove', function(d) {
@@ -94,4 +140,24 @@ function arcTween(a) {
     return function(t) {
         return arc(i(t));
     };
+}
+
+function changeText(){
+    if(document.getElementById('yr2010').checked) {
+        d3.select("text").text("2010");
+    }else if(document.getElementById('yr2011').checked) {
+        d3.select("text").text("2011");
+    }else if(document.getElementById('yr2012').checked) {
+        d3.select("text").text("2012");
+    }else if(document.getElementById('yr2013').checked) {
+        d3.select("text").text("2013");
+    }else if(document.getElementById('yr2014').checked) {
+        d3.select("text").text("2014");
+    }else if(document.getElementById('yr2015').checked) {
+        d3.select("text").text("2015");
+    }else if(document.getElementById('yr2016').checked) {
+        d3.select("text").text("2016");
+    }else if(document.getElementById('yr2017').checked) {
+        d3.select("text").text("2017");
+    }
 }

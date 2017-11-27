@@ -1,9 +1,9 @@
 
 var width = 700,
-    height = 600,
+    height = 900,
     radius = Math.min(width, height) / 2;
 
-var color = d3.scaleOrdinal(['#C6E2FF','#FFC0CB','#CAFF70','#FFE4C4','#FFA07A','#c4d4e0','#FFEC8B', '#E6E6FA', '#EED2EE', '#F5DEB3', '#E5DACE', '#edfafd', '#FFE4E1', '#C1FFC1' ]);
+var color = d3.scaleOrdinal(['#C6E2FF','#FFC0CB','#CAFF70','#FFE4C4','#FFA07A','#b19cf9','#FFEC8B', '#E6E6FA', '#EED2EE', '#F5DEB3', '#E5DACE', '#edfafd', '#FFE4E1', '#C1FFC1' ]);
 
 var pie = d3.pie()
     .value(function(d) { return d.yr2010; })
@@ -13,7 +13,7 @@ var arc = d3.arc()
     .innerRadius(0)
     .outerRadius(radius - 20);
 
-var tooltip = d3.select("body")
+var tooltip = d3.select(".pieChart")
     .append('div')
     .attr('class', 'tooltip');
 tooltip.append('div')
@@ -28,13 +28,22 @@ var svg = d3.select(".pieChart").append("svg")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 svg.append("text")
-    .attr("x", -280)
+    .attr("x", -310)
     .attr("y",  -246)
     .attr("text-anchor", "middle")
-    .style("fill", "#3B6A87")
+    .style("fill", "#000")
     .style("font-size", "30px")
     .style("text-decoration", "underline")
     .text("2010");
+
+svg.append("text")
+    .attr("x", -300)
+    .attr("y", 400)
+    .attr("text-anchor", "left")
+    .style("fill", "#000")
+    .style("font-size", "15px")
+    .attr("id", "bottomInfo")
+    .text("** If you hover over a part of the chart, then the market share percentage will be shown! ");
 
 d3.tsv("data/test2.tsv", type, function(error, data) {
     if (error) throw error;
@@ -145,19 +154,27 @@ function arcTween(a) {
 function changeText(){
     if(document.getElementById('yr2010').checked) {
         d3.select("text").text("2010");
+        d3.select("#bottomInfo").text("sjdhskajhdkjas");
     }else if(document.getElementById('yr2011').checked) {
         d3.select("text").text("2011");
+        d3.select("#bottomInfo").text("d");
     }else if(document.getElementById('yr2012').checked) {
         d3.select("text").text("2012");
+        d3.select("#bottomInfo").text("c");
     }else if(document.getElementById('yr2013').checked) {
         d3.select("text").text("2013");
+        d3.select("#bottomInfo").text("e");
     }else if(document.getElementById('yr2014').checked) {
         d3.select("text").text("2014");
+        d3.select("#bottomInfo").text("f");
     }else if(document.getElementById('yr2015').checked) {
         d3.select("text").text("2015");
+        d3.select("#bottomInfo").text("j");
     }else if(document.getElementById('yr2016').checked) {
         d3.select("text").text("2016");
+        d3.select("#bottomInfo").text("k");
     }else if(document.getElementById('yr2017').checked) {
         d3.select("text").text("2017");
+        d3.select("#bottomInfo").text("t");
     }
 }

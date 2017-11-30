@@ -29,7 +29,7 @@
     <div class="row-fluid">
         <div id="box-container" align="left">
             <div class="box" id="description-box">
-                <h2> 📱 About the Visualization</h2>
+                <h2 style="opacity: 0.9"> 📱 About the Visualization</h2>
                 <p></p> <br>
                 This is a pie chart which shows the global market share of shipments <br> by smartphone vendors. <br>
                 <br>
@@ -40,7 +40,7 @@
             </div>
             <p></p>
             <div class="box" id="legend-box">
-                <h2> 📱 Legend </h2>
+                <h2 style="opacity: 0.9"> 📱 Legend </h2>
                 <br>
                 <div class="row-fluid" >
                     <div class="table">
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="box" id="year-box">
-                <h1> 📱 Each Year </h1>
+                <h2 style="opacity: 0.9"> 📱 Each Year </h2>
                 <br>
                 <div class="year-btn-group">
                     <form>
@@ -99,13 +99,14 @@
             <script src="scripts/pie.js"></script>
         </div>
         <div class="box" id="info-box">
-            <h2> 📱 About The Data </h2>
+            <h2 style="opacity: 0.9"> 📱 About The Data </h2>
             <div id="info-paragraph">
                 <p></p>
                 <div id="info-text">
                     Nokia was really popular in the 2000's.
                     It was in the lead for the highest number of smartphone market shares in 2010. Which I found
-                    quite surprising because I thought it would've been Apple or Samsung.
+                    quite surprising because I thought it would've been Apple or Samsung. <br> <br>
+                    This was the time that the iPhone 4 was released and Apple only had 15.4% of market shares.
                 </div>
                 <p></p>
             </div>
@@ -117,39 +118,52 @@
     $(document).ready(function() {
         $('input[type=radio][name=dataset]').change(function() {
             if (this.value == 'yr2010') {
-                document.getElementById("info-paragraph").innerHTML = "Nokia was really popular in the 2000\'s "
+                document.getElementById("info-paragraph").innerHTML = "Nokia was really popular in the 2000\'s. "
                     + "It was in the lead for the highest number of smartphone market shares in 2010. Which I found "
-                    + "quite surprising because I thought it would've been Apple or Samsung.";
+                    + "quite surprising because I thought it would've been Apple or Samsung. <br><br> "
+                    + "This was the time that the iPhone 4 was released and Apple only had 15.4% of market shares.";
             }
             else if (this.value == 'yr2011') {
                 document.getElementById("info-paragraph").innerHTML = "Nokia shares lowered, whereas Samsung and Apple "
-                    + "shares began to jump and grow from here." + " This was also the introduction to smaller Asian "
+                    + "shares began to jump and grow from here. Apple probably went up because of the popularity of "
+                    + "the iPhone 4s. <br><br> Additionally, this was also the introduction to smaller Asian "
                     + "companies such as HTC, Huawei, and ZTE.";
             }
             else if (this.value == 'yr2012') {
-                document.getElementById("info-paragraph").innerHTML = "Samsung grew a lot more this year. And then became "
-                    + "the lead smartphone vendor in market shares." + " Lenovo and LG also joined the competition, but "
+                document.getElementById("info-paragraph").innerHTML = "Samsung and Apple grew a lot more this year. "
+                    + "Apple reached the highest market share it has gotten with 18.74% due to the iPhone 5. "
+                    + "Samsung then became the leading smartphone vendor in market shares. <br><br>"
+                    + "Lenovo and LG also joined the competition, but "
                     + "had small market shares compared to ZTE, Huawei and Sony.";
             }
             else if (this.value == 'yr2013') {
                 document.getElementById("info-paragraph").innerHTML = "Various unknown companies grew popular during this "
-                    + "year while Apple lost some market shares. A Chinese company called Xiaomi was introduced while "
-                    + "Nokia and HTC were knocked out.";
+                    + "year while Apple lost some market shares and Samsung still went up. This could be due to the "
+                    + "release of the Samsung Galaxy S4. <br><br>"
+                    + "A Chinese company called Xiaomi was introduced while Nokia, HTC, Sony, and RIM were knocked out.";
             }
             else if (this.value == 'yr2014') {
                 document.getElementById("info-paragraph").innerHTML = "Even more companies came out with smartphones and "
-                    + "were shipping them out. ";
+                    + "were shipping them out. <br><br> Meanwhile, Apple and Samsung's shares went down. This could be due to "
+                    + "the Chinese companies selling phones with high end components for half the cost of an iPhone or "
+                    + "Samsung Galaxy device.";
             }
             else if (this.value == 'yr2015') {
                 document.getElementById("info-paragraph").innerHTML = "Even more companies came out with smartphones and "
-                    + "were shipping them out!! vivo and OPPO joined the game with their smartphones";
+                    + "were shipping them out!! We also see the same pattern of Samsung and Apple market shares going down "
+                    + "<br><br> Huawei keeps continuing to grow. vivo and OPPO joined the game. OPPO's daughter company "
+                    + "released the OnePlus 2 smartphone.";
             }
             else if (this.value == 'yr2016') {
                 document.getElementById("info-paragraph").innerHTML = "vivo and OPPO grew a bit, while Lenovo and LG "
-                    + "were booted out.";
+                    + "were booted out. <br><br> Apple has the lowest market it had since 2010. We can also see that more "
+                    + "users are transitioning to Android devices. ";
             }
             else if (this.value == 'yr2017') {
-                document.getElementById("info-paragraph").innerHTML = "";
+                document.getElementById("info-paragraph").innerHTML = "We only have information for 3 quarters of this "
+                    + "year which makes it difficult to see if the iPhone X's release has made a positive impact or not "
+                    + "for Apple's market shares. <br><br> On the other hand, Samsung's shares rose a little because of "
+                    + "their Samsung Galaxy releases.";
             }
         });
     });

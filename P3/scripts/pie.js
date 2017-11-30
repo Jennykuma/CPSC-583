@@ -1,6 +1,6 @@
 
 var width = 700,
-    height = 700,
+    height = 600,
     radius = Math.min(width, height) / 2;
 
 var color = d3.scaleOrdinal(['#C6E2FF','#FFC0CB','#CAFF70','#FFE4C4','#FFA07A','#b19cf9','#FFEC8B', '#E6E6FA', '#EED2EE', '#F5DEB3', '#E5DACE', '#edfafd', '#FFE4E1', '#C1FFC1' ]);

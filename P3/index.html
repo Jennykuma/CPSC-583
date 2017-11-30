@@ -101,8 +101,20 @@
         <div class="box" id="info-box">
             <h2> 📱 About The Data </h2>
             <div id="info-paragraph">
-                <p></p> <br>
-                This semester is the roughest
+                <p></p>
+                <div class="table1">
+                    <div class="cell1"></div> Nokia &mdash; 33.925% </div>
+                    <div class="cell1"></div> Other &mdash; 20.375% </div>
+                    <div class="cell1"></div> RIM &mdash; 16.45% </div>
+                    <div class="cell1"></div> Apple &mdash; 15.4% </div>
+                    <div class="cell1"></div> Samsung &mdash; 7.025% </div>
+                    <div class="cell1"></div> HTC &mdash; 6.825% </div>
+                </div>
+                Nokia &mdash; 33.925% <br>
+                Other &mdash; 20.375% <br>
+                RIM &mdash; 16.45% <br>
+                Apple &mdash; 15.4% <br>
+
                 <p></p>
             </div>
         </div>
@@ -113,7 +125,7 @@
     $(document).ready(function() {
         $('input[type=radio][name=dataset]').change(function() {
             if (this.value == 'yr2010') {
-                document.getElementById("info-paragraph").innerHTML = "hey heyyyyy";
+                document.getElementById("info-paragraph").innerHTML = "";
             }
             else if (this.value == 'yr2011') {
                 document.getElementById("info-paragraph").innerHTML = "hey hey";

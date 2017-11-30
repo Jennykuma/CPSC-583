@@ -73,7 +73,7 @@ body {
 }
 
 #info-box {
-    margin-left: 100px;
+    margin-left: 25px;
     margin-top: 250px;
     height: 250px;
     width: 400px;
@@ -170,6 +170,20 @@ body {
     height:10%;
     display:inline-block;
 }
+
+.table1 {
+    position:relative;  /*so children div can use 100% height and not go over */
+    width:100%; /* as long as this div's parent is body it will take up whole screen */
+    height:10px; /*make whatever you want */
+    padding:5px; /* will make that spacing you wanted */
+}
+
+.table1 .cell1 {
+    width:30%;
+    height:10%;
+    display:inline-block;
+}
+
 
 input[type="radio"]{
     margin: 0 0px 0 55px;

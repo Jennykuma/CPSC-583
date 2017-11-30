@@ -102,19 +102,11 @@
             <h2> 📱 About The Data </h2>
             <div id="info-paragraph">
                 <p></p>
-                <div class="table1">
-                    <div class="cell1"></div> Nokia &mdash; 33.925% </div>
-                    <div class="cell1"></div> Other &mdash; 20.375% </div>
-                    <div class="cell1"></div> RIM &mdash; 16.45% </div>
-                    <div class="cell1"></div> Apple &mdash; 15.4% </div>
-                    <div class="cell1"></div> Samsung &mdash; 7.025% </div>
-                    <div class="cell1"></div> HTC &mdash; 6.825% </div>
+                <div id="info-text">
+                    Nokia was really popular in the 2000's.
+                    It was in the lead for the highest number of smartphone market shares in 2010. Which I found
+                    quite surprising because I thought it would've been Apple or Samsung.
                 </div>
-                Nokia &mdash; 33.925% <br>
-                Other &mdash; 20.375% <br>
-                RIM &mdash; 16.45% <br>
-                Apple &mdash; 15.4% <br>
-
                 <p></p>
             </div>
         </div>
@@ -125,10 +117,39 @@
     $(document).ready(function() {
         $('input[type=radio][name=dataset]').change(function() {
             if (this.value == 'yr2010') {
-                document.getElementById("info-paragraph").innerHTML = "";
+                document.getElementById("info-paragraph").innerHTML = "Nokia was really popular in the 2000\'s "
+                    + "It was in the lead for the highest number of smartphone market shares in 2010. Which I found "
+                    + "quite surprising because I thought it would've been Apple or Samsung.";
             }
             else if (this.value == 'yr2011') {
-                document.getElementById("info-paragraph").innerHTML = "hey hey";
+                document.getElementById("info-paragraph").innerHTML = "Nokia shares lowered, whereas Samsung and Apple "
+                    + "shares began to jump and grow from here." + " This was also the introduction to smaller Asian "
+                    + "companies such as HTC, Huawei, and ZTE.";
+            }
+            else if (this.value == 'yr2012') {
+                document.getElementById("info-paragraph").innerHTML = "Samsung grew a lot more this year. And then became "
+                    + "the lead smartphone vendor in market shares." + " Lenovo and LG also joined the competition, but "
+                    + "had small market shares compared to ZTE, Huawei and Sony.";
+            }
+            else if (this.value == 'yr2013') {
+                document.getElementById("info-paragraph").innerHTML = "Various unknown companies grew popular during this "
+                    + "year while Apple lost some market shares. A Chinese company called Xiaomi was introduced while "
+                    + "Nokia and HTC were knocked out.";
+            }
+            else if (this.value == 'yr2014') {
+                document.getElementById("info-paragraph").innerHTML = "Even more companies came out with smartphones and "
+                    + "were shipping them out. ";
+            }
+            else if (this.value == 'yr2015') {
+                document.getElementById("info-paragraph").innerHTML = "Even more companies came out with smartphones and "
+                    + "were shipping them out!! vivo and OPPO joined the game with their smartphones";
+            }
+            else if (this.value == 'yr2016') {
+                document.getElementById("info-paragraph").innerHTML = "vivo and OPPO grew a bit, while Lenovo and LG "
+                    + "were booted out.";
+            }
+            else if (this.value == 'yr2017') {
+                document.getElementById("info-paragraph").innerHTML = "";
             }
         });
     });

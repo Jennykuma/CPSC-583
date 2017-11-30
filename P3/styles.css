@@ -51,9 +51,10 @@ body {
 
 .box {
     background-color: rgba(59, 106, 135, 0.8);
-    padding: 10px;
     margin-left: 10px;
     width: auto;
+    border-radius: 25px;
+    padding: 20px;
 }
 
 #description-box {
@@ -179,9 +180,12 @@ body {
 }
 
 .table1 .cell1 {
-    width:30%;
-    height:10%;
+    width:50%;
+    height:30%;
     display:inline-block;
+}
+
+#info-text {
 }
 
 

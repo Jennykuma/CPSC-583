@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +7,20 @@
 
     <title> P3: Smartphone Market Shares 2009-2017 </title>
 
-    <!-- Scripts -->
+    !-- Scripts --
     <script type="text/javascript" src="scripts/d3.min.js"></script>
     <script src="scripts/pie.js" type='text/javascript'></script>
 
-    <!-- Latest compiled and minified CSS -->
+    !-- Latest compiled and minified CSS --
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
+    !-- jQuery library --
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
+    !-- Latest compiled JavaScript --
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- JS & CSS & Font Files/Links -->
+    !-- JS & CSS & Font Files/Links --
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 </head>
@@ -94,12 +95,12 @@
                     </form>
                 </div>
             </div>
-        </div> <!-- box-container -->
+        </div> !-- box-container --
         <div class="pieChart">
             <script src="scripts/pie.js"></script>
         </div>
         <div class="box" id="info-box">
-            <h2  style="opacity: 0.9"> 📱 About The Data </h2>
+            <h2 style="opacity: 0.9"> 📱 About The Data </h2>
             <div id="info-paragraph">
                 <p></p>
                 <div id="info-text">
@@ -111,8 +112,8 @@
                 <p></p>
             </div>
         </div>
-    </div> <!-- row-fluid -->
-</div> <!-- container-fluid-->
+    </div> !-- row-fluid --
+</div> !-- container-fluid--
 
 <script>
     $(document).ready(function() {
@@ -169,6 +170,169 @@
     });
 </script>
 
+
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title> P3: Smartphone Market Shares 2010-2017 </title>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="scripts/spiderChart.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- JS & CSS & Font Files/Links -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            font-size: 14px;
+            font-family: "Helvetica Neue", Helvetica;
+        }
+
+        #chart {
+            position: absolute;
+            top: 50px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="body">
+    <div class="container-fluid">
+        <h1 id="title"> 📱 Smartphone Market Shares 2010 - 2017 📱 </h1>
+        <div class="row-fluid">
+            <div id="box-container" align="left">
+                <div class="box" id="description-box">
+                    <h2 style="opacity: 0.9"> 📱 About the Visualization</h2>
+                    <p></p>
+                    This is a pie chart which shows the global market share of shipments <br> by smartphone vendors. <br>
+                    <br>
+                    As a follower of technology and specifically smartphones, I decided to analyze the <br> global market
+                    share (in shipments) currently held by smartphone vendors.<br>
+                    The data goes from the First Quarter of 2010 to the Third Quarter of 2017.<br>
+                    <p></p>
+                </div>
+                <div class="box" id="info-box">
+                    <h2 style="opacity: 0.9"> 📱 About The Data </h2>
+                    <div id="info-paragraph">
+                        <p></p>
+                        <div id="info-text">
+                            Nokia was really popular in the 2000's.
+                            It was in the lead for the highest number of smartphone market shares in 2010. Which I found
+                            quite surprising because I thought it would've been Apple or Samsung. <br> <br>
+                            This was the time that the iPhone 4 was released and Apple only had 15.4% of market shares.
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="box" id="year-box">
+                    <h2 style="opacity: 0.9"> 📱 Each Year </h2>
+                    <div class="year-btn-group">
+                        <form>
+                            <label><input type="checkbox" name="dataset" id="yr2010" value="yr2010" onclick = "changeText()"> 2010</label>
+                            <label><input type="checkbox" name="dataset" id="yr2011" value="yr2011" onclick = "changeText()"> 2011</label>
+                            <label><input type="checkbox" name="dataset" id="yr2012" value="yr2012" onclick = "changeText()"> 2012</label>
+                            <label><input type="checkbox" name="dataset" id="yr2013" value="yr2013" onclick = "changeText()"> 2013</label>
+                            <br>
+                            <label><input type="checkbox" name="dataset" id="yr2014" value="yr2014" onclick = "changeText()"> 2014</label>
+                            <label><input type="checkbox" name="dataset" id="yr2015" value="yr2015" onclick = "changeText()"> 2015</label>
+                            <label><input type="checkbox" name="dataset" id="yr2016" value="yr2016" onclick = "changeText()"> 2016</label>
+                            <label><input type="checkbox" name="dataset" id="yr2017" value="yr2017" onclick = "changeText()"> 2017</label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="chart" style="margin-left: 500px;margin-top: 50px;"></div>
+            <script type="text/javascript" src="scripts/data.js"></script>
+        </div> <!-- Row Fluid -->
+    </div> <!-- Container Fluid -->
+</div>
+
+<!--
+<form>
+    <label><input type="checkbox" name="dataset" id="yr2010" value="yr2010" onclick = "changeText()"> 2010</label>
+    <label><input type="checkbox" name="dataset" id="yr2011" value="yr2011" onclick = "changeText()"> 2011</label>
+    <label><input type="checkbox" name="dataset" id="yr2012" value="yr2012" onclick = "changeText()"> 2012</label>
+    <label><input type="checkbox" name="dataset" id="yr2013" value="yr2013" onclick = "changeText()"> 2013</label>
+    <br>
+    <label><input type="checkbox" name="dataset" id="yr2014" value="yr2014" onclick = "changeText()"> 2014</label>
+    <label><input type="checkbox" name="dataset" id="yr2015" value="yr2015" onclick = "changeText()"> 2015</label>
+    <label><input type="checkbox" name="dataset" id="yr2016" value="yr2016" onclick = "changeText()"> 2016</label>
+    <label><input type="checkbox" name="dataset" id="yr2017" value="yr2017" onclick = "changeText()"> 2017</label>
+</form>
+-->
+
+<script>
+    /*
+    $(document).ready(function() {
+        $('input[type=checkbox][name=dataset]').change(function() {
+            if (this.value == 'yr2010') {
+                document.getElementById("info-paragraph").innerHTML = "Nokia was really popular in the 2000\'s. "
+                    + "It was in the lead for the highest number of smartphone market shares in 2010. Which I found "
+                    + "quite surprising because I thought it would've been Apple or Samsung. <br><br> "
+                    + "This was the time that the iPhone 4 was released and Apple only had 15.4% of market shares.";
+            }
+            if (this.value == 'yr2011') {
+                document.getElementById("info-paragraph").innerHTML = "Nokia shares lowered, whereas Samsung and Apple "
+                    + "shares began to jump and grow from here. Apple probably went up because of the popularity of "
+                    + "the iPhone 4s. <br><br> Additionally, this was also the introduction to smaller Asian "
+                    + "companies such as HTC, Huawei, and ZTE.";
+            }
+            if (this.value == 'yr2012') {
+                document.getElementById("info-paragraph").innerHTML = "Samsung and Apple grew a lot more this year. "
+                    + "Apple reached the highest market share it has gotten with 18.74% due to the iPhone 5. "
+                    + "Samsung then became the leading smartphone vendor in market shares. <br><br>"
+                    + "Lenovo and LG also joined the competition, but "
+                    + "had small market shares compared to ZTE, Huawei and Sony.";
+            }
+            if (this.value == 'yr2013') {
+                document.getElementById("info-paragraph").innerHTML = "Various unknown companies grew popular during this "
+                    + "year while Apple lost some market shares and Samsung still went up. This could be due to the "
+                    + "release of the Samsung Galaxy S4. <br><br>"
+                    + "A Chinese company called Xiaomi was introduced while Nokia, HTC, Sony, and RIM were knocked out.";
+            }
+            if (this.value == 'yr2014') {
+                document.getElementById("info-paragraph").innerHTML = "Even more companies came out with smartphones and "
+                    + "were shipping them out. <br><br> Meanwhile, Apple and Samsung's shares went down. This could be due to "
+                    + "the Chinese companies selling phones with high end components for half the cost of an iPhone or "
+                    + "Samsung Galaxy device.";
+            }
+            if (this.value == 'yr2015') {
+                document.getElementById("info-paragraph").innerHTML = "Even more companies came out with smartphones and "
+                    + "were shipping them out!! We also see the same pattern of Samsung and Apple market shares going down "
+                    + "<br><br> Huawei keeps continuing to grow. vivo and OPPO joined the game. OPPO's daughter company "
+                    + "released the OnePlus 2 smartphone.";
+            }
+            if (this.value == 'yr2016') {
+                document.getElementById("info-paragraph").innerHTML = "vivo and OPPO grew a bit, while Lenovo and LG "
+                    + "were booted out. <br><br> Apple has the lowest market it had since 2010. We can also see that more "
+                    + "users are transitioning to Android devices. ";
+            }
+            if (this.value == 'yr2017') {
+                document.getElementById("info-paragraph").innerHTML = "We only have information for 3 quarters of this "
+                    + "year which makes it difficult to see if the iPhone X's release has made a positive impact or not "
+                    + "for Apple's market shares. <br><br> On the other hand, Samsung's shares rose a little because of "
+                    + "their Samsung Galaxy releases.";
+            }
+        });
+    });*/
+</script>
 
 </body>
 </html>

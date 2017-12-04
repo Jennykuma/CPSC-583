@@ -11,6 +11,7 @@ var d = [
     [
         {axis:"Samsung",value:7.025},
         {axis:"Apple",value:15.4},
+        {axis:"Other",value:20.375},
         {axis:"LG",value:0},
         {axis:"Lenovo",value:0},
         {axis:"ZTE",value:0},
@@ -22,10 +23,10 @@ var d = [
         {axis:"RIM",value:16.45},
         {axis:"HTC",value:6.825},
         {axis:"Nokia",value:33.925},
-        {axis:"Other",value:20.375},
     ],[
         {axis:"Samsung",value:18.375},
         {axis:"Apple",value:18.475},
+        {axis:"Other",value:23},
         {axis:"LG",value:0},
         {axis:"Lenovo",value:0},
         {axis:"ZTE",value:2.275},
@@ -37,10 +38,10 @@ var d = [
         {axis:"RIM",value:10.7},
         {axis:"HTC",value:9.075},
         {axis:"Nokia",value:16.25},
-        {axis:"Other",value:23},
     ],[
         {axis:"Samsung",value:30.29772},
         {axis:"Apple",value:18.73905},
+        {axis:"Other",value:20.94070553},
         {axis:"LG",value:3.627721},
         {axis:"Lenovo",value:2.727045},
         {axis:"ZTE",value:4.228171},
@@ -52,10 +53,10 @@ var d = [
         {axis:"RIM",value:3.902927195},
         {axis:"HTC",value:3.602702027},
         {axis:"Nokia",value:3.602702027},
-        {axis:"Other",value:20.94070553},
     ],[
         {axis:"Samsung",value:31.42177722},
         {axis:"Apple",value:15.12640801},
+        {axis:"Other",value:36.43053817},
         {axis:"LG",value:4.730913642},
         {axis:"Lenovo",value:4.382978723},
         {axis:"ZTE",value:2.102628285},
@@ -67,10 +68,10 @@ var d = [
         {axis:"RIM",value:0},
         {axis:"HTC",value:0},
         {axis:"Nokia",value:0},
-        {axis:"Other",value:36.43053817},
     ],[
         {axis:"Samsung",value:24.8125937},
         {axis:"Apple",value:14.59270365},
+        {axis:"Other",value:43.2033983},
         {axis:"LG",value:3.573213393},
         {axis:"Lenovo",value:4.597701149},
         {axis:"ZTE",value:0},
@@ -82,10 +83,10 @@ var d = [
         {axis:"RIM",value:0},
         {axis:"HTC",value:0},
         {axis:"Nokia",value:0},
-        {axis:"Other",value:43.2033983},
     ],[
         {axis:"Samsung",value:22.4},
         {axis:"Apple",value:16.075},
+        {axis:"Other",value:38.425},
         {axis:"LG",value:1.15},
         {axis:"Lenovo",value:5.2},
         {axis:"ZTE",value:0},
@@ -97,10 +98,10 @@ var d = [
         {axis:"RIM",value:0},
         {axis:"HTC",value:0},
         {axis:"Nokia",value:0},
-        {axis:"Other",value:38.425},
     ],[
         {axis:"Samsung",value:21.36965759},
         {axis:"Apple",value:14.47138215},
+        {axis:"Other",value:40.93976506},
         {axis:"LG",value:0},
         {axis:"Lenovo",value:0},
         {axis:"ZTE",value:0},
@@ -112,10 +113,10 @@ var d = [
         {axis:"RIM",value:0},
         {axis:"HTC",value:0},
         {axis:"Nokia",value:0},
-        {axis:"Other",value:40.93976506},
     ],[
         {axis:"Samsung",value:22.808},
         {axis:"Apple",value:13.138},
+        {axis:"Other",value:39.346},
         {axis:"LG",value:0},
         {axis:"Lenovo",value:0},
         {axis:"ZTE",value:0},
@@ -127,7 +128,6 @@ var d = [
         {axis:"RIM",value:0},
         {axis:"HTC",value:0},
         {axis:"Nokia",value:0},
-        {axis:"Other",value:39.346},
     ]
 
 ];
@@ -184,49 +184,49 @@ function changeText(){
 
 function changeDataText(){
     if (document.getElementById('yr2010').checked) {
-        document.getElementById("info-paragraph").innerHTML = "Nokia was really popular in the 2000\'s. "
+        document.getElementById("info-paragraph").innerHTML = "<b>2010: </b>" + "Nokia was really popular in the 2000\'s. "
             + "It was in the lead for the highest number of smartphone market shares in 2010. Which I found "
             + "quite surprising because I thought it would've been Apple or Samsung. <br><br> "
             + "This was the time that the iPhone 4 was released and Apple only had 15.4% of market shares.";
     }
     if (document.getElementById('yr2011').checked) {
-        document.getElementById("info-paragraph").innerHTML = "Nokia shares lowered, whereas Samsung and Apple "
+        document.getElementById("info-paragraph").innerHTML = "<b>2011: </b>" + "Nokia shares lowered, whereas Samsung and Apple "
             + "shares began to jump and grow from here. Apple probably went up because of the popularity of "
             + "the iPhone 4s. <br><br> Additionally, this was also the introduction to smaller Asian "
             + "companies such as HTC, Huawei, and ZTE.";
     }
     if (document.getElementById('yr2012').checked) {
-        document.getElementById("info-paragraph").innerHTML = "Samsung and Apple grew a lot more this year. "
+        document.getElementById("info-paragraph").innerHTML = "<b>2012: </b>" + "Samsung and Apple grew a lot more this year. "
             + "Apple reached the highest market share it has gotten with 18.74% due to the iPhone 5. "
             + "Samsung then became the leading smartphone vendor in market shares. <br><br>"
             + "Lenovo and LG also joined the competition, but "
             + "had small market shares compared to ZTE, Huawei and Sony.";
     }
     if (document.getElementById('yr2013').checked) {
-        document.getElementById("info-paragraph").innerHTML = "Various unknown companies grew popular during this "
+        document.getElementById("info-paragraph").innerHTML = "<b>2013: </b>" + "Various unknown companies grew popular during this "
             + "year while Apple lost some market shares and Samsung still went up. This could be due to the "
             + "release of the Samsung Galaxy S4. <br><br>"
             + "A Chinese company called Xiaomi was introduced while Nokia, HTC, Sony, and RIM were knocked out.";
     }
     if (document.getElementById('yr2014').checked) {
-        document.getElementById("info-paragraph").innerHTML = "Even more companies came out with smartphones and "
+        document.getElementById("info-paragraph").innerHTML = "<b>2014: </b>" + "Even more companies came out with smartphones and "
             + "were shipping them out. <br><br> Meanwhile, Apple and Samsung's shares went down. This could be due to "
             + "the Chinese companies selling phones with high end components for half the cost of an iPhone or "
             + "Samsung Galaxy device.";
     }
     if (document.getElementById('yr2015').checked) {
-        document.getElementById("info-paragraph").innerHTML = "Even more companies came out with smartphones and "
+        document.getElementById("info-paragraph").innerHTML = "<b>2015: </b>" + "Even more companies came out with smartphones and "
             + "were shipping them out!! We also see the same pattern of Samsung and Apple market shares going down "
             + "<br><br> Huawei keeps continuing to grow. vivo and OPPO joined the game. OPPO's daughter company "
             + "released the OnePlus 2 smartphone.";
     }
     if (document.getElementById('yr2016').checked) {
-        document.getElementById("info-paragraph").innerHTML = "vivo and OPPO grew a bit, while Lenovo and LG "
+        document.getElementById("info-paragraph").innerHTML = "<b>2016: </b>" + "vivo and OPPO grew a bit, while Lenovo and LG "
             + "were booted out. <br><br> Apple has the lowest market it had since 2010. We can also see that more "
             + "users are transitioning to Android devices. ";
     }
     if (document.getElementById('yr2017').checked) {
-        document.getElementById("info-paragraph").innerHTML = "We only have information for 3 quarters of this "
+        document.getElementById("info-paragraph").innerHTML = "<b>2017: </b>" + "We only have information for 3 quarters of this "
             + "year which makes it difficult to see if the iPhone X's release has made a positive impact or not "
             + "for Apple's market shares. <br><br> On the other hand, Samsung's shares rose a little because of "
             + "their Samsung Galaxy releases.";
@@ -240,6 +240,7 @@ function emptyData(){
         emptyData.push([
             {axis:"Samsung",value:0},
             {axis:"Apple",value:0},
+            {axis:"Other",value:0},
             {axis:"LG",value:0},
             {axis:"Lenovo",value:0},
             {axis:"ZTE",value:0},
@@ -251,7 +252,6 @@ function emptyData(){
             {axis:"RIM",value:0},
             {axis:"HTC",value:0},
             {axis:"Nokia",value:0},
-            {axis:"Other",value:0},
         ])
     }
     return emptyData;

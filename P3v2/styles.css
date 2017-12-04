@@ -2,6 +2,7 @@ body {
     background-color: white;
     color: white;
     font-family: 'Nunito', sans-serif;
+    font-size: 10px;
 }
 
 .row-fluid {
@@ -58,23 +59,23 @@ body {
 }
 
 #description-box {
-    margin-top: 50px;
     height: 300px;
+    width: 600px;
 }
 
 #legend-box {
     margin-top: 25px;
     height: 275px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 #year-box {
-    margin-top: 25px;
+    margin-top: 15px;
     height: 150px;
 }
 
 #info-box {
-    margin-top: 25px;
+    margin-top: 15px;
     height: 225px;
     width: 550px;
 }

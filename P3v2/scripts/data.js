@@ -1,5 +1,5 @@
-var w = 600,
-    h = 600;
+var w = 550,
+    h = 550;
 
 var colorscale = d3.scale.category10();
 

@@ -1,3 +1,5 @@
+// Got help and used template from http://bl.ocks.org/nbremer/6506614
+
 var RadarChart = {
     draw: function(id, d, options){
         var cfg = {

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a26c162-badd-41c8-9c05-cc56a2f841e7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P3v2/scripts/data.js" afterPath="$PROJECT_DIR$/P3v2/scripts/data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P3v2/styles.css" afterPath="$PROJECT_DIR$/P3v2/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/P3v2/index.html" afterPath="$PROJECT_DIR$/P3v2/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +14,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/P3v2/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="594">
+              <caret line="228" column="49" lean-forward="false" selection-start-line="228" selection-start-column="49" selection-end-line="228" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -36,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/P3v2/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="759">
@@ -102,6 +100,7 @@
         <option value="$PROJECT_DIR$/P1/webpage.css" />
         <option value="$PROJECT_DIR$/P3v2/scripts/data.js" />
         <option value="$PROJECT_DIR$/P3v2/styles.css" />
+        <option value="$PROJECT_DIR$/P3v2/index.html" />
       </list>
     </option>
   </component>
@@ -613,12 +612,12 @@
       <option name="presentableId" value="Default" />
       <updated>1506657638416</updated>
       <workItem from="1506657640286" duration="2063000" />
-      <workItem from="1512366523672" duration="299000" />
+      <workItem from="1512366523672" duration="366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2362000" />
+    <option name="totallyTimeSpent" value="2429000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="2730" height="1811" extended-state="0" />
@@ -729,18 +728,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/P3v2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/P3v2/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
           <caret line="72" column="17" lean-forward="false" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/P3v2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="228" column="49" lean-forward="false" selection-start-line="228" selection-start-column="49" selection-end-line="228" selection-end-column="49" />
           <folding />
         </state>
       </provider>

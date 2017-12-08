@@ -59,6 +59,7 @@ body {
 }
 
 #description-box {
+    margin-top: 100px;
     height: 300px;
     width: 600px;
 }
